@@ -1,0 +1,14 @@
+voici la nouvelle formule crée lui sa propre page si nécessaire afin que la page d'accueil garde une visibilité harmonieuse
+
+Pour le VTC :
+- formation pratique examen VTC 3 heures 380€
+- formation pratique examen VTC 7 heures 580€
+- formule complete formation initiale VTC 2449€
+
+Pour le taxi :
+- formation pratique examen TAXI 3 heures 680€
+- formation pratique examen TAXI 7 heures 780€
+- formule complete formation initiale TAXI 2449€
+
+Pour les independants :
+- Location Voiture uniquement 100€

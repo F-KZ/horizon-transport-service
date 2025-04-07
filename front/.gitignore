@@ -1,0 +1,12 @@
+# Ignorer les fichiers de sauvegarde générés par l'éditeur
+*~
+
+# Ignorer le dossier de dépendances node_modules
+node_modules/
+
+# Ignorer les fichiers log
+*.log
+
+# Ignorer les fichiers de configuration locaux
+.env
+.vercel

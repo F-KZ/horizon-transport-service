@@ -1,0 +1,8 @@
+# Autorise tous les robots à explorer toutes les pages de ce site
+User-agent: *
+Disallow:
+
+
+#sitemap
+
+Sitemap: https://www.horizontransports.fr/sitemap.xml

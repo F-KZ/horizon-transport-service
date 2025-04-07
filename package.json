@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@stripe/react-stripe-js": "^3.5.1",
+    "@stripe/stripe-js": "^6.1.0",
+    "genezio": "^3.2.6"
+  }
+}
