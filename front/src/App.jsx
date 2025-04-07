@@ -11,13 +11,11 @@ import CarList from "./components/CarList/CarList";
 import Testimonial from "./components/Testimonial/Testimonial";
 import Footer from "./components/Footer/Footer";
 import Form from "./components/Contact/Form"
-import AppStoreBanner from "./components/AppStoreBanner/AppStoreBanner";
 import Formules from "./components/Prix/Formules";
 import FormulesDetail from "./components/Prix/FormulesDetail";
 import Politique from "./components/Footer/Politique";
 import Conditions from "./components/Footer/Conditions";
 import Mentions from "./components/Footer/Mentions";
-import Indicateur from "./components/Indicateur/Indicateur";
 import { BrowserRouter, Router, Routes, Route} from "react-router-dom";
 import Seo from "./components/Referencement/Seo";
 import StripePayment from './components/Paiement/StripePayment';
