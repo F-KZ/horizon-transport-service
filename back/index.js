@@ -22,11 +22,9 @@ app.use(express.urlencoded({ extended: true }))
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
 
-app.set('view engine', 'ejs')
-
 app.get('/', (req, res) => {
-    res.render('index.ejs')
-})
+  res.send('Hola !');
+});
 
 app.use('/stripe', stripeRoutes) 
 
