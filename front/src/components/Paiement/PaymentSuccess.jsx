@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Navbar2 from '../Navbar/Navbar2';
 import { Link } from 'react-router-dom';
+import { BACK_API } from '../utils/constant';
 
 const PaymentSuccess = () => {
   const [searchParams] = useSearchParams();
@@ -16,7 +17,7 @@ const PaymentSuccess = () => {
           return;
         }
 
-        const response = await fetch(`http://localhost:3000/stripe/complete?session_id=${sessionId}`);
+        const response = await fetch(`${BACK_API}/stripe/complete?session_id=${sessionId}`);
         const data = await response.json();
 
         if (data.status === 'success') {

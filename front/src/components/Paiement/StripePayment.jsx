@@ -4,8 +4,9 @@ import { Elements, useStripe, useElements, CardElement } from '@stripe/react-str
 import { useNavigate } from 'react-router-dom';
 import Navbar2 from '../Navbar/Navbar2';
 import ScrollToTop from '../ScrollToTop';
+import { BACK_API, PUBLIC_KEY_STRIPE } from '../utils/constant';
 
-const stripePromise = loadStripe('pk_live_51QusZyL29Sc2AZsdrdazGdAxHruNw7Rj24hSpWTVpecLUHmToZwrkBUd3PFGWLCZaPULbYc0IixMNy2aUlp0TdQ000rb58wxCO');
+const stripePromise = loadStripe(`${PUBLIC_KEY_STRIPE}`);
 
 const pricingOptions = [
   {
@@ -83,7 +84,7 @@ const PaymentForm = () => {
     const selectedPricing = pricingOptions.find(option => option.id === selectedOption);
 
     try {
-      const response = await fetch('https://d93a2273-3b8b-4f1e-98ed-b3c3fd7a39d5.eu-central-1.cloud.genez.io/stripe/checkout', {
+      const response = await fetch(`${BACK_API}/stripe/checkout`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
