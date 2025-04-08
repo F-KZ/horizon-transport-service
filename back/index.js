@@ -20,7 +20,7 @@ app.use(cors({
 app.use(express.json())
 app.use(express.urlencoded({ extended: true })) 
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
+
 
 app.get('/', (req, res) => {
   res.send('Hola !');
