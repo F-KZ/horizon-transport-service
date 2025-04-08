@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import Navbar2 from '../Navbar/Navbar2';
 import ScrollToTop from '../ScrollToTop';
 
-const stripePromise = loadStripe('votre_clé_publique_stripe');
+const stripePromise = loadStripe('pk_live_51QusZyL29Sc2AZsdrdazGdAxHruNw7Rj24hSpWTVpecLUHmToZwrkBUd3PFGWLCZaPULbYc0IixMNy2aUlp0TdQ000rb58wxCO');
 
 const pricingOptions = [
   {
