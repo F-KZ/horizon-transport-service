@@ -26,21 +26,22 @@ import ScrollToTop from './components/ScrollToTop';
 // import Experience from "./components/Experience/Experience";
 
 const App = () => {
-  // dark mode start
-  const [theme, setTheme] = useState(
-     localStorage.setItem("theme", "dark") 
-  );
+  // Gestion du dark mode
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
   const element = document.documentElement;
 
   useEffect(() => {
     if (theme === "dark") {
       element.classList.add("dark");
       localStorage.setItem("theme", "dark");
+    } else {
+      element.classList.remove("dark");
+      localStorage.setItem("theme", "light");
     }
   }, [theme]);
-  // dark mode end
 
-  React.useEffect(() => {
+  // Initialisation AOS
+  useEffect(() => {
     AOS.init({
       offset: 100,
       duration: 800,
@@ -49,15 +50,27 @@ const App = () => {
     });
     AOS.refresh();
   }, []);
+
   return (
     <>
-    <Seo/>
-    <BrowserRouter>
+      <Seo />
       <div className="light:bg-white dark:bg-black dark:text-white light:text-black overflow-x-hidden">
         <Routes>
-          <Route path="/" element={<Home theme={theme} setTheme={setTheme}  />} />
-          <Route path="/conditions" element={<Conditions/>} />
-          <Route path="/mentions" element={<Mentions/>} />
+          <Route path="/" element={
+            <>
+              <Navbar theme={theme} setTheme={setTheme} />
+              <Hero theme={theme} />
+              <About />
+              <Services />
+              <CarList />
+              <Testimonial />
+              <Formules />
+              <Form />
+              <ScrollToTop />
+            </>
+          } />
+          <Route path="/conditions" element={<Conditions />} />
+          <Route path="/mentions" element={<Mentions />} />
           <Route path="/politique-de-confidentialite" element={<Politique />} />
           <Route path="/paiement" element={<StripePayment />} />
           <Route path="/payment" element={<StripePayment />} />
@@ -68,28 +81,8 @@ const App = () => {
         </Routes>
         <Footer />
       </div>
-    </BrowserRouter>
     </>
   );
 };
 
-function Home({ theme, setTheme }) {
-  return (
-    <>
-      <Navbar theme={theme} setTheme={setTheme} />
-      <Hero theme={theme}/>
-      <About />
-      <Services />
-      <CarList />
-      <Testimonial />
-      <Formules />
-      <Form />
-      <ScrollToTop />
-    </>
-  );
-}
-
-
-
-
-export default App;
+export default App
