@@ -11,7 +11,7 @@ dotenv.config()
 
 // Configuration CORS
 app.use(cors({
-  origin: process.env.BASE_URL_LOCAL || process.env.BASE_URL_PROD,
+  origin: process.env.BASE_URL_LOCAL || process.env.BASE_URL_PROD || process.env.BASE_BACKEND,
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
