@@ -11,7 +11,11 @@ dotenv.config()
 
 // Configuration CORS
 app.use(cors({
-  origin: process.env.BASE_URL_LOCAL || process.env.BASE_URL_PROD || process.env.BASE_BACKEND,
+  origin: [
+    'http://localhost:5173',
+    'https://www.horizontransports.fr',
+    'https://horizontransports.fr'
+  ],
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
@@ -31,7 +35,7 @@ app.use('/stripe', stripeRoutes)
 const port = process.env.PORT || 3000
 if (process.env.NODE_ENV === 'dev') {
   app.listen(port, () => {
-    console.log(`localhost:${port}/`);
+    console.log(`Server is running on port ${port}`);
   });
 }
 
