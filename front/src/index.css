@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Vos styles personnalisés ici */
+
 html {
   scroll-behavior: smooth;
 }
