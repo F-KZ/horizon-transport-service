@@ -19,7 +19,7 @@ const FormulesDetail = () => {
           
           {/* VTC Section */}
           <div className="mb-12">
-            <h2 className="text-2xl font-semibold text-blue-500 mb-6">Formations VTC</h2>
+            <h2 className="text-2xl font-semibold text-blue-500 mb-6">VTC Formation Préparation Pratique</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
                 <h3 className="text-xl font-semibold text-white mb-4">Formation Pratique 3h</h3>
@@ -47,7 +47,7 @@ const FormulesDetail = () => {
                 <ul className="text-gray-300 space-y-2">
                   <li>✓ Formation complète VTC</li>
                   <li>✓ Théorie et pratique</li>
-                  <li>✓ Accompagnement jusqu'à l'examen</li>
+                  <li>✓ Accompagnement jusqu'à l'obtention de la carte</li>
                 </ul>
               </div>
             </div>
@@ -55,7 +55,7 @@ const FormulesDetail = () => {
           
           {/* Taxi Section */}
           <div className="mb-12">
-            <h2 className="text-2xl font-semibold text-blue-500 mb-6">Formations Taxi</h2>
+            <h2 className="text-2xl font-semibold text-blue-500 mb-6">Taxi Formation Préparation Pratique</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
                 <h3 className="text-xl font-semibold text-white mb-4">Formation Pratique 3h</h3>
@@ -83,7 +83,7 @@ const FormulesDetail = () => {
                 <ul className="text-gray-300 space-y-2">
                   <li>✓ Formation complète Taxi</li>
                   <li>✓ Théorie et pratique</li>
-                  <li>✓ Accompagnement jusqu'à l'examen</li>
+                  <li>✓ Accompagnement jusqu'à l'obtention de la carte</li>
                 </ul>
               </div>
             </div>
@@ -91,13 +91,13 @@ const FormulesDetail = () => {
           
           {/* Indépendants Section */}
           <div>
-            <h2 className="text-2xl font-semibold text-blue-500 mb-6">Pour les Indépendants</h2>
+            <h2 className="text-2xl font-semibold text-blue-500 mb-6">Candidats Libre</h2>
             <div className="bg-gray-800 p-6 rounded-lg shadow-lg max-w-md mx-auto">
               <h3 className="text-xl font-semibold text-white mb-4">Location de Voiture</h3>
               <p className="text-3xl font-bold text-blue-500 mb-4">100€</p>
               <ul className="text-gray-300 space-y-2">
                 <li>✓ Location de véhicule uniquement</li>
-                <li>✓ Véhicule conforme aux normes</li>
+                <li>✓ Véhicule conforme aux normes de l'examen</li>
                 <li>✓ Assurance incluse</li>
               </ul>
             </div>

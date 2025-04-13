@@ -79,7 +79,7 @@ const Footer = () => {
             <br />
             <div className="flex items-center gap-3">
               <FaLocationArrow />
-              <p>76140 Petit-Quevilly</p>
+              <p className="font-extralight">46 RUE LEON MALETRA, 76140 Petit-Quevilly</p>
             </div>
             <div className="flex items-center gap-3 mt-3">
               <FaMobileAlt />
@@ -97,12 +97,12 @@ const Footer = () => {
               />
               <div className="flex flex-col gap-3">
               <button // Separate button for PDF_VTC
-                className="ml-4 px-4 py-2 bg-cyan-700 text-white font-bold rounded-lg"
+                className="ml-4 px-4 py-2 text-white font-thin text-sm rounded-lg"
               >
                 Agrément VTC : n° 76-24-03
               </button>
               <button // Separate button for PDF_VTC
-                className="ml-4 px-4 py-2 bg-cyan-700 text-white font-bold rounded-lg"
+                className="ml-4 px-4 py-2  text-white font-thin text-sm rounded-lg"
               >
                 Agrément Taxi : n° 76-24-02
               </button>
