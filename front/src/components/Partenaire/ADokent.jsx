@@ -13,7 +13,7 @@ const ADokent = () => {
       <div className="pt-20 pb-12 px-4">
         <div className="max-w-4xl mx-auto mt-[4rem]">
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-white mb-4">A.Dokent</h1>
+            <h1 className="text-4xl font-bold text-white mb-4">E.Learning</h1>
             <p className="text-xl text-gray-400">Votre plateforme d'apprentissage en ligne</p>
           </div>
 
@@ -109,7 +109,7 @@ const ADokent = () => {
           </div>
           <div className="text-center">
             <Link
-              to="https://learn.dokent.com/login/index.php"
+              to="https://horizontransports.dokent.com/login/index.php"
               className="inline-block bg-[#1E3A8A] hover:bg-[#1E40AF] text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-all duration-200 transform hover:scale-105"
             >
               Commencer ma formation
