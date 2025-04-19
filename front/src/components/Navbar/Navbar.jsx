@@ -25,7 +25,7 @@ export const Navlinks = [
   },
   {
   
-    name: "A.Dokent",
+    name: "E.Learning",
     link: "/adokent",
   },
   {

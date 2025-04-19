@@ -23,7 +23,7 @@ const ADokent = () => {
               <div>
                 <h2 className="text-2xl font-bold text-white mb-4">Une plateforme d'excellence</h2>
                 <p className="text-gray-300 mb-4">
-                  A.Dokent est notre partenaire privilégié pour la formation en ligne. Cette plateforme innovante 
+                  Avec notre partenaire privilégié pour la formation en ligne. Cette plateforme innovante 
                   vous offre un accès exclusif à l'ensemble de nos cours pédagogiques après votre inscription.
                 </p>
                 <p className="text-gray-300">
@@ -65,7 +65,7 @@ const ADokent = () => {
 
           {/* Section Avantages */}
           <div className="bg-gray-900 rounded-lg p-8 mb-8">
-            <h2 className="text-2xl font-bold text-white mb-6 text-center">Pourquoi choisir A.Dokent ?</h2>
+            <h2 className="text-2xl font-bold text-white mb-6 text-center">Pourquoi nous choisir ?</h2>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-gray-800 rounded-lg p-6">
                 <div className="text-[#DC2626] mb-4">
