@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useStripe, useElements, CardElement } from '@stripe/react-stripe-js';
 import { FaCreditCard } from 'react-icons/fa';
-import { BACK_API } from '../utils/constant';
+import { BACK_API,LOCAL_BACK } from '../utils/constant';
 import card from '../../assets/pngegg.png';
 
 const PaymentForm = ({ type, formation, price, title }) => {

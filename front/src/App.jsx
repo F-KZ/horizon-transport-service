@@ -27,6 +27,7 @@ import CapacitéTransport from "./components/About/CapacitéTransport";
 import CapacitéNeufPersonnes from "./components/About/CapacitéNeufPersonnes";
 import Taxi from "./components/About/Taxi";
 import Slider from './components/Slider/Slider';
+import PaymentCancel from "./components/Paiement/PaymentCancel";
 // import Experience from "./components/Experience/Experience";
 
 const App = () => {

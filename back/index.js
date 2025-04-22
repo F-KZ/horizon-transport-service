@@ -33,10 +33,10 @@ app.get('/', (req, res) => {
 app.use('/stripe', stripeRoutes) 
 
 const port = process.env.PORT || 3000
-if (process.env.NODE_ENV === 'dev') {
+
   app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
   });
-}
+
 
 export const handler = serverless(app)

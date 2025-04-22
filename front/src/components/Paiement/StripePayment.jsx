@@ -5,7 +5,7 @@ import { loadStripe } from '@stripe/stripe-js';
 import PaymentForm from './PaymentForm';
 import Navbar2 from '../Navbar/Navbar2';
 import { FaArrowLeft } from 'react-icons/fa';
-import { BACK_API, PUBLIC_KEY_STRIPE } from '../utils/constant';
+import { BACK_API, PUBLIC_KEY_STRIPE, LOCAL_BACK } from '../utils/constant';
 
 const stripePromise = loadStripe(`${PUBLIC_KEY_STRIPE}`);
 
