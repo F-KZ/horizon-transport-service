@@ -47,7 +47,7 @@ const Hero = ({ theme }) => {
               data-aos-delay="600"
               className="text-2xl lg:text-4xl font-semibold font-serif text-center md:text-justify"
             >
-              Vous voulez devenir chauffeur professionnel VTC ou Taxi ? 
+              Vous voulez devenir chauffeur professionnel VTC,  Taxi ou Capacité de transport ? 
             </h1>
             <p data-aos="fade-up" data-aos-delay="1000" className=" text-2xl text-justify">
             Nous mettons à votre disposition un accompagnement sur-mesure, pour garantir votre réussite. {" "}

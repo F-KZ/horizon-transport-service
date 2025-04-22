@@ -14,101 +14,227 @@ const FormulesDetail = () => {
       </div>
       
       <div className="pt-20 pb-12 px-4">
-        <div className="max-w-4xl mx-auto mt-[3rem]">
-          <h1 className="text-3xl font-bold text-center mb-8 text-white">Nos Formules de Formation</h1>
+        <div className="max-w-6xl mx-auto pt-[3rem]">
+          <h1 className="text-3xl font-bold text-center mb-8 text-white">Nos Formations</h1>
           
-          {/* VTC Section */}
+          {/* Section VTC */}
           <div className="mb-12">
-            <h2 className="text-2xl font-semibold text-blue-500 mb-6">VTC Formation Préparation Pratique</h2>
+            <h2 className="text-2xl font-semibold text-[#FFC727] mb-6">Formation VTC</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-                <h3 className="text-xl font-semibold text-white mb-4">Formation Pratique 3h</h3>
-                <p className="text-3xl font-bold text-blue-500 mb-4">380€</p>
-                <ul className="text-gray-300 space-y-2">
-                  <li>✓ 3 heures de formation pratique</li>
-                  <li>✓ Préparation à l'examen VTC</li>
-                  <li>✓ Accompagnement personnalisé</li>
-                </ul>
+              <div className="bg-gray-800 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold text-white mb-4">Formation VTC 3h</h3>
+                <p className="text-gray-300 mb-4">Formation courte pour les conducteurs expérimentés</p>
+                <div className="mt-4 pt-4 border-t border-gray-700">
+                  <p className="text-gray-400 text-sm">Montant total</p>
+                  <p className="text-lg font-semibold text-[#FFC727]">380€</p>
+                </div>
+                <Link 
+                  to={`/paiement?type=vtc&formation=3h&price=380&title=Formation VTC 3h`} 
+                  className="block w-full bg-[#FFC727] text-black font-semibold py-2 px-4 rounded-lg text-center hover:bg-[#FFC727]/90 transition-colors mt-4"
+                >
+                  S'inscrire
+                </Link>
               </div>
-              
-              <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-                <h3 className="text-xl font-semibold text-white mb-4">Formation Pratique 7h</h3>
-                <p className="text-3xl font-bold text-blue-500 mb-4">580€</p>
-                <ul className="text-gray-300 space-y-2">
-                  <li>✓ 7 heures de formation pratique</li>
-                  <li>✓ Préparation intensive à l'examen</li>
-                  <li>✓ Suivi personnalisé</li>
-                </ul>
+
+              <div className="bg-gray-800 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold text-white mb-4">Formation VTC 7h</h3>
+                <p className="text-gray-300 mb-4">Formation complète pour les nouveaux conducteurs</p>
+                <div className="mt-4 pt-4 border-t border-gray-700">
+                  <p className="text-gray-400 text-sm">Montant total</p>
+                  <p className="text-lg font-semibold text-[#FFC727]">580€</p>
+                </div>
+                <Link 
+                  to={`/paiement?type=vtc&formation=7h&price=580&title=Formation VTC 7h`} 
+                  className="block w-full bg-[#FFC727] text-black font-semibold py-2 px-4 rounded-lg text-center hover:bg-[#FFC727]/90 transition-colors mt-4"
+                >
+                  S'inscrire
+                </Link>
               </div>
-              
-              <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-                <h3 className="text-xl font-semibold text-white mb-4">Formation Initiale Complète</h3>
-                <p className="text-3xl font-bold text-blue-500 mb-4">2449€</p>
-                <ul className="text-gray-300 space-y-2">
-                  <li>✓ Formation complète VTC</li>
-                  <li>✓ Théorie et pratique</li>
-                  <li>✓ Accompagnement jusqu'à l'obtention de la carte</li>
-                </ul>
+
+              <div className="bg-gray-800 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold text-white mb-4">Formation VTC Complète</h3>
+                <p className="text-gray-300 mb-4">Formation intensive avec examen</p>
+                <div className="mt-4 pt-4 border-t border-gray-700">
+                  <p className="text-gray-400 text-sm">Montant total</p>
+                  <p className="text-lg font-semibold text-[#FFC727]">2449€</p>
+                </div>
+                <Link 
+                  to={`/paiement?type=vtc&formation=complete&price=2449&title=Formation VTC Complète`} 
+                  className="block w-full bg-[#FFC727] text-black font-semibold py-2 px-4 rounded-lg text-center hover:bg-[#FFC727]/90 transition-colors mt-4"
+                >
+                  S'inscrire
+                </Link>
+              </div>
+
+              <div className="bg-gray-800 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold text-white mb-4">Formation Continue VTC</h3>
+                <p className="text-gray-300 mb-4">14 heures de formation pratique avec accompagnement personnalisé</p>
+                <div className="mt-4 pt-4 border-t border-gray-700">
+                  <p className="text-gray-400 text-sm">Montant total</p>
+                  <p className="text-lg font-semibold text-[#FFC727]">350€</p>
+                </div>
+                <Link 
+                  to={`/paiement?type=vtc&formation=continue&price=350&title=Formation Continue VTC`} 
+                  className="block w-full bg-[#FFC727] text-black font-semibold py-2 px-4 rounded-lg text-center hover:bg-[#FFC727]/90 transition-colors mt-4"
+                >
+                  S'inscrire
+                </Link>
+              </div>
+
+              <div className="bg-gray-800 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold text-white mb-4">Formation Passerelle VTC ou Taxi</h3>
+                <p className="text-gray-300 mb-4">14 heures de formation pratique avec préparation à l'examen</p>
+                <div className="mt-4 pt-4 border-t border-gray-700">
+                  <p className="text-gray-400 text-sm">Montant total</p>
+                  <p className="text-lg font-semibold text-[#FFC727]">780€</p>
+                </div>
+                <Link 
+                  to={`/paiement?type=vtc&formation=passerelle&price=780&title=Formation Passerelle VTC ou Taxi`} 
+                  className="block w-full bg-[#FFC727] text-black font-semibold py-2 px-4 rounded-lg text-center hover:bg-[#FFC727]/90 transition-colors mt-4"
+                >
+                  S'inscrire
+                </Link>
               </div>
             </div>
           </div>
-          
-          {/* Taxi Section */}
+
+          {/* Section Taxi */}
           <div className="mb-12">
-            <h2 className="text-2xl font-semibold text-blue-500 mb-6">Taxi Formation Préparation Pratique</h2>
+            <h2 className="text-2xl font-semibold text-[#FFC727] mb-6">Formation Taxi</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-                <h3 className="text-xl font-semibold text-white mb-4">Formation Pratique 3h</h3>
-                <p className="text-3xl font-bold text-blue-500 mb-4">680€</p>
-                <ul className="text-gray-300 space-y-2">
-                  <li>✓ 3 heures de formation pratique</li>
-                  <li>✓ Préparation à l'examen Taxi</li>
-                  <li>✓ Accompagnement personnalisé</li>
-                </ul>
+              <div className="bg-gray-800 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold text-white mb-4">Formation Taxi 3h</h3>
+                <p className="text-gray-300 mb-4">Formation courte pour les conducteurs expérimentés</p>
+                <div className="mt-4 pt-4 border-t border-gray-700">
+                  <p className="text-gray-400 text-sm">Montant total</p>
+                  <p className="text-lg font-semibold text-[#FFC727]">680€</p>
+                </div>
+                <Link 
+                  to={`/paiement?type=taxi&formation=3h&price=680&title=Formation Taxi 3h`} 
+                  className="block w-full bg-[#FFC727] text-black font-semibold py-2 px-4 rounded-lg text-center hover:bg-[#FFC727]/90 transition-colors mt-4"
+                >
+                  S'inscrire
+                </Link>
               </div>
-              
-              <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-                <h3 className="text-xl font-semibold text-white mb-4">Formation Pratique 7h</h3>
-                <p className="text-3xl font-bold text-blue-500 mb-4">780€</p>
-                <ul className="text-gray-300 space-y-2">
-                  <li>✓ 7 heures de formation pratique</li>
-                  <li>✓ Préparation intensive à l'examen</li>
-                  <li>✓ Suivi personnalisé</li>
-                </ul>
+
+              <div className="bg-gray-800 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold text-white mb-4">Formation Taxi 7h</h3>
+                <p className="text-gray-300 mb-4">Formation complète pour les nouveaux conducteurs</p>
+                <div className="mt-4 pt-4 border-t border-gray-700">
+                  <p className="text-gray-400 text-sm">Montant total</p>
+                  <p className="text-lg font-semibold text-[#FFC727]">780€</p>
+                </div>
+                <Link 
+                  to={`/paiement?type=taxi&formation=7h&price=780&title=Formation Taxi 7h`} 
+                  className="block w-full bg-[#FFC727] text-black font-semibold py-2 px-4 rounded-lg text-center hover:bg-[#FFC727]/90 transition-colors mt-4"
+                >
+                  S'inscrire
+                </Link>
               </div>
-              
-              <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-                <h3 className="text-xl font-semibold text-white mb-4">Formation Initiale Complète</h3>
-                <p className="text-3xl font-bold text-blue-500 mb-4">2449€</p>
-                <ul className="text-gray-300 space-y-2">
-                  <li>✓ Formation complète Taxi</li>
-                  <li>✓ Théorie et pratique</li>
-                  <li>✓ Accompagnement jusqu'à l'obtention de la carte</li>
-                </ul>
+
+              <div className="bg-gray-800 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold text-white mb-4">Formation Taxi Complète</h3>
+                <p className="text-gray-300 mb-4">Formation intensive avec examen</p>
+                <div className="mt-4 pt-4 border-t border-gray-700">
+                  <p className="text-gray-400 text-sm">Montant total</p>
+                  <p className="text-lg font-semibold text-[#FFC727]">2449€</p>
+                </div>
+                <Link 
+                  to={`/paiement?type=taxi&formation=complete&price=2449&title=Formation Taxi Complète`} 
+                  className="block w-full bg-[#FFC727] text-black font-semibold py-2 px-4 rounded-lg text-center hover:bg-[#FFC727]/90 transition-colors mt-4"
+                >
+                  S'inscrire
+                </Link>
+              </div>
+
+              <div className="bg-gray-800 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold text-white mb-4">Formation Continue Taxi</h3>
+                <p className="text-gray-300 mb-4">14 heures de formation pratique avec accompagnement personnalisé</p>
+                <div className="mt-4 pt-4 border-t border-gray-700">
+                  <p className="text-gray-400 text-sm">Montant total</p>
+                  <p className="text-lg font-semibold text-[#FFC727]">350€</p>
+                </div>
+                <Link 
+                  to={`/paiement?type=taxi&formation=continue&price=350&title=Formation Continue Taxi`} 
+                  className="block w-full bg-[#FFC727] text-black font-semibold py-2 px-4 rounded-lg text-center hover:bg-[#FFC727]/90 transition-colors mt-4"
+                >
+                  S'inscrire
+                </Link>
+              </div>
+
+              <div className="bg-gray-800 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold text-white mb-4">Formation Mobilité Taxi</h3>
+                <p className="text-gray-300 mb-4">14 heures de formation pratique avec préparation à l'examen</p>
+                <div className="mt-4 pt-4 border-t border-gray-700">
+                  <p className="text-gray-400 text-sm">Montant total</p>
+                  <p className="text-lg font-semibold text-[#FFC727]">350€</p>
+                </div>
+                <Link 
+                  to={`/paiement?type=taxi&formation=mobilite&price=350&title=Formation Mobilité Taxi`} 
+                  className="block w-full bg-[#FFC727] text-black font-semibold py-2 px-4 rounded-lg text-center hover:bg-[#FFC727]/90 transition-colors mt-4"
+                >
+                  S'inscrire
+                </Link>
               </div>
             </div>
           </div>
-          
-          {/* Indépendants Section */}
-          <div>
-            <h2 className="text-2xl font-semibold text-blue-500 mb-6">Candidats Libre</h2>
-            <div className="bg-gray-800 p-6 rounded-lg shadow-lg max-w-md mx-auto">
-              <h3 className="text-xl font-semibold text-white mb-4">Location de Voiture</h3>
-              <p className="text-3xl font-bold text-blue-500 mb-4">100€</p>
-              <ul className="text-gray-300 space-y-2">
-                <li>✓ Location de véhicule uniquement</li>
-                <li>✓ Véhicule conforme aux normes de l'examen</li>
-                <li>✓ Assurance incluse</li>
-              </ul>
+
+          {/* Nouvelle Section Capacité de Transport */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-semibold text-[#FFC727] mb-6">Capacité de Transport</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-gray-800 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold text-white mb-4">Véhicules n'excédant pas 9 places</h3>
+                <p className="text-gray-300 mb-4">Formation pour le transport de personnes avec des véhicules de moins de 9 places</p>
+                <div className="mt-4 pt-4 border-t border-gray-700">
+                  <p className="text-gray-400 text-sm">Montant total</p>
+                  <p className="text-lg font-semibold text-[#FFC727]">1999€</p>
+                </div>
+                <Link 
+                  to={`/paiement?type=transport&formation=9places&price=1999&title=Véhicules n'excédant pas 9 places`} 
+                  className="block w-full bg-[#FFC727] text-black font-semibold py-2 px-4 rounded-lg text-center hover:bg-[#FFC727]/90 transition-colors mt-4"
+                >
+                  S'inscrire
+                </Link>
+              </div>
+
+              <div className="bg-gray-800 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold text-white mb-4">Transport Léger de Marchandises</h3>
+                <p className="text-gray-300 mb-4">Formation pour le transport routier de marchandises au moyen de véhicules légers</p>
+                <div className="mt-4 pt-4 border-t border-gray-700">
+                  <p className="text-gray-400 text-sm">Montant total</p>
+                  <p className="text-lg font-semibold text-[#FFC727]">1500€</p>
+                </div>
+                <Link 
+                  to={`/paiement?type=transport&formation=leger&price=1500&title=Transport Léger de Marchandises`} 
+                  className="block w-full bg-[#FFC727] text-black font-semibold py-2 px-4 rounded-lg text-center hover:bg-[#FFC727]/90 transition-colors mt-4"
+                >
+                  S'inscrire
+                </Link>
+              </div>
             </div>
           </div>
-          
-          <div className="mt-12 text-center">
-            <Link to="/paiement">
-              <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition-all duration-200 transform hover:scale-105">
-                Je m'inscris
-              </button>
-            </Link>
+
+          {/* Section Location de Voiture */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-semibold text-[#FFC727] mb-6">Location de Voiture</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-gray-800 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold text-white mb-4">Location de vehicule homologué</h3>
+                <p className="text-gray-300 mb-4">Location de véhicule homologué aux normes de l'examen avec assurance et assistance le jour de l'examen</p>
+                <div className="mt-4 pt-4 border-t border-gray-700">
+                  <p className="text-gray-400 text-sm">Montant total</p>
+                  <p className="text-lg font-semibold text-[#FFC727]">100€</p>
+                </div>
+                <Link 
+                  to={`/paiement?type=location&formation=homologue&price=100&title=Location de vehicule homologué`} 
+                  className="block w-full bg-[#FFC727] text-black font-semibold py-2 px-4 rounded-lg text-center hover:bg-[#FFC727]/90 transition-colors mt-4"
+                >
+                  S'inscrire
+                </Link>
+              </div>
+
+            </div>
           </div>
         </div>
       </div>

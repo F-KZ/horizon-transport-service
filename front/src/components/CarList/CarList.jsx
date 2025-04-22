@@ -66,17 +66,61 @@ const CarList = () => {
             ))}
           </div>
         </div>
-        <div className="grid place-items-center mt-8">
-          <button data-aos="zoom-in"   className="button-outline">
-          <a href="https://www.francecompetences.fr/recherche/rs/5637/" target="_blank" rel="noopener noreferrer">
-          Habilitation pour l’accès à la profession de conducteur de voiture de transport avec chauffeur (VTC), Fiche : RS5637
-          </a>
+        <div className="grid place-items-center mt-8 gap-4">
+          <button 
+            data-aos="zoom-in" 
+            className="w-full max-w-2xl bg-[#FFC727] text-black font-semibold py-3 px-6 rounded-lg hover:bg-[#FFC727]/90 transition-colors duration-200"
+          >
+            <a 
+              href="https://www.francecompetences.fr/recherche/rs/5637/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="block w-full"
+            >
+              Habilitation pour l'accès à la profession de conducteur de voiture de transport avec chauffeur (VTC), Fiche : RS5637
+            </a>
           </button>
-          <br/>
-          <button data-aos="zoom-in"  className="button-outline">
-          <a href="https://www.francecompetences.fr/recherche/rs/5635//" target="_blank" rel="noopener noreferrer">
-          Habilitation pour l’accès à la profession de conducteur de Taxi, Fiche : RS5635
-          </a>
+
+          <button 
+            data-aos="zoom-in" 
+            className="w-full max-w-2xl bg-[#FFC727] text-black font-semibold py-3 px-6 rounded-lg hover:bg-[#FFC727]/90 transition-colors duration-200"
+          >
+            <a 
+              href="https://www.francecompetences.fr/recherche/rs/5635//" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="block w-full"
+            >
+              Habilitation pour l'accès à la profession de conducteur de Taxi, Fiche : RS5635
+            </a>
+          </button>
+
+          <button 
+            data-aos="zoom-in" 
+            className="w-full max-w-2xl bg-[#FFC727] text-black font-semibold py-3 px-6 rounded-lg hover:bg-[#FFC727]/90 transition-colors duration-200"
+          >
+            <a 
+              href="https://www.francecompetences.fr/recherche/rs/5854/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="block w-full"
+            >
+              Attestation de capacité professionnelle en transport routier de marchandises au moyen de véhicules de transport routier léger de marchandises, Fiche : RS5854
+            </a>
+          </button>
+
+          <button 
+            data-aos="zoom-in" 
+            className="w-full max-w-2xl bg-[#FFC727] text-black font-semibold py-3 px-6 rounded-lg hover:bg-[#FFC727]/90 transition-colors duration-200"
+          >
+            <a 
+              href="https://www.francecompetences.fr/recherche/rs/5855/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="block w-full"
+            >
+              Attestation de capacité professionnelle en transport routier de personnes avec des véhicules n'excédant pas neuf places, y compris le conducteur, Fiche : RS5855
+            </a>
           </button>
         </div>
       </div>

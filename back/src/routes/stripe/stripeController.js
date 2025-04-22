@@ -7,7 +7,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
 
 export const stripeCheckout = async (req, res) => {
     try {
-        const { type, amount } = req.body;
+        const { amount, type, formation, title } = req.body;
 
         // Validation des données
         if (!type || !amount) {
@@ -28,7 +28,8 @@ export const stripeCheckout = async (req, res) => {
                     price_data: {
                         currency: 'eur',
                         product_data: {
-                            name: `Formation ${type}`,
+                            name: title,
+                            description: `Formation ${type.toUpperCase()} - ${formation}`,
                         },
                         unit_amount: amount,
                     },
@@ -36,26 +37,21 @@ export const stripeCheckout = async (req, res) => {
                 },
             ],
             mode: 'payment',
-            success_url: 'https://www.horizontransports.fr/payment/success?session_id={CHECKOUT_SESSION_ID}',
-            cancel_url: 'https://www.horizontransports.fr/payment/cancel',
+            success_url: `${process.env.FRONT_URL}/success`,
+            cancel_url: `${process.env.FRONT_URL}/cancel`,
         });
 
         res.json({ url: session.url });
     } catch (error) {
-        console.error('Erreur Stripe:', error);
+        console.error('Stripe error:', error);
         res.status(500).json({ error: 'Erreur lors de la création de la session de paiement' });
     }
 };
 
 export const stripeComplete = async (req, res) => {
-    try {
-        const session = await stripe.checkout.sessions.retrieve(req.query.session_id);
-        res.json({ status: 'success', session });
-    } catch (error) {
-        res.status(500).json({ error: 'Erreur lors de la vérification du paiement' });
-    }
+    res.send('Paiement réussi !');
 };
 
 export const stripeCancel = async (req, res) => {
-    res.json({ status: 'cancelled' });
+    res.send('Paiement annulé.');
 };

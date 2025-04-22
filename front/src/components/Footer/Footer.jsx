@@ -47,19 +47,19 @@ const Footer = () => {
               Informations Légales
             </h1>
             <Link to="/mentions">
-            <p className="text-sm">
+            <p className="text-sm hover:text-blue-500 transition-colors">
               Mentions Légales{" "}
             </p>
             </Link>
             <br />
             <Link to="/politique-de-confidentialite">
-            <p className="text-sm" >
+            <p className="text-sm hover:text-blue-500 transition-colors" >
               Politique de confidentialité et des cookies
             </p>
             </Link>
             <br/>
             <Link to="/conditions">
-            <p className="text-sm">
+            <p className="text-sm hover:text-blue-500 transition-colors">
               Conditions Générales de vente
             </p>
             </Link>
@@ -79,13 +79,13 @@ const Footer = () => {
             <br />
             <div className="flex items-center gap-3">
               <FaLocationArrow />
-              <p className="font-extralight">46 RUE LEON MALETRA, 76140 Petit-Quevilly</p>
+              <p className="font-extralight text-sm">46 RUE LEON MALETRA, 76140 Petit-Quevilly</p>
             </div>
             <div className="flex items-center gap-3 mt-3">
               <FaMobileAlt />
-              <a href="tel:+33 7 69 98 98 85">+33 7 69 98 98 85</a>
+              <a href="tel:+33 7 69 98 98 85" className="text-sm hover:text-blue-500 transition-colors">+33 7 69 98 98 85</a>
               <br/>
-              <a href="tel:+33 9 81 03 60 52">+33 9 81 03 60 52</a>
+              <a href="tel:+33 9 81 03 60 52" className="text-sm hover:text-blue-500 transition-colors">+33 9 81 03 60 52</a>
             </div>
             <div className="flex mt-4">
               <img

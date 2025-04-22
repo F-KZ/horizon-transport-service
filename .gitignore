@@ -10,3 +10,6 @@ node_modules/
 # Ignorer les fichiers de configuration locaux
 .env
 .vercel
+/front/node_modules
+/back/node_modules
+/front/src/utils/constant.js

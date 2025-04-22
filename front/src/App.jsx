@@ -19,10 +19,14 @@ import Mentions from "./components/Footer/Mentions";
 import { BrowserRouter, Router, Routes, Route} from "react-router-dom";
 import Seo from "./components/Referencement/Seo";
 import StripePayment from './components/Paiement/StripePayment';
-import PaymentSuccess from './components/Paiement/PaymentSuccess';
-import PaymentCancel from './components/Paiement/PaymentCancel';
+import Success from './components/Paiement/Success';
+import Cancel from './components/Paiement/Cancel';
 import ADokent from './components/Partenaire/ADokent';
 import ScrollToTop from './components/ScrollToTop';
+import CapacitéTransport from "./components/About/CapacitéTransport";
+import CapacitéNeufPersonnes from "./components/About/CapacitéNeufPersonnes";
+import Taxi from "./components/About/Taxi";
+import Slider from './components/Slider/Slider';
 // import Experience from "./components/Experience/Experience";
 
 const App = () => {
@@ -60,7 +64,7 @@ const App = () => {
             <>
               <Navbar theme={theme} setTheme={setTheme} />
               <Hero theme={theme} />
-              <About />
+              <Slider />
               <Services />
               <CarList />
               <Testimonial />
@@ -73,9 +77,8 @@ const App = () => {
           <Route path="/mentions" element={<Mentions />} />
           <Route path="/politique-de-confidentialite" element={<Politique />} />
           <Route path="/paiement" element={<StripePayment />} />
-          <Route path="/payment" element={<StripePayment />} />
-          <Route path="/payment/success" element={<PaymentSuccess />} />
-          <Route path="/payment/cancel" element={<PaymentCancel />} />
+          <Route path="/success" element={<Success />} />
+          <Route path="/cancel" element={<Cancel />} />
           <Route path="/adokent" element={<ADokent />} />
           <Route path="/formules" element={<FormulesDetail />} />
         </Routes>

@@ -1,7 +1,7 @@
 import React from "react";
-import Carwebp from "../../assets/profile.webp";
+import Carwebp from "../../assets/vtc-noir.png";
 import { useState } from "react";
-
+import { Link } from 'react-router-dom';
 
 const scrollToSection = () => {
   // Sélectionner la section à laquelle vous souhaitez faire défiler en utilisant son ID
@@ -16,7 +16,7 @@ const scrollToSection = () => {
 
 const Profession = ({ switchSide}) => {
   return(
-    <div className="space-y-5 sm:p-16 pb-6">
+    <div className="flex flex-col gap-5 max-w-3xl  ">
               <h1
                 data-aos="fade-up"
                 className="text-3xl sm:text-4xl font-bold font-serif text-justify md:text-start"
@@ -33,18 +33,19 @@ const Profession = ({ switchSide}) => {
               <p data-aos="fade-up">
                 N&apos;attendez plus, rejoignez-nous sans plus attendre !
               </p>
+              <Link to="/formules">
               <button
-              onClick={switchSide}
                data-aos="fade-up" className="button-outline">
-                En quoi consiste la formation ?
-              </button>
+                Je suis intéressé !
+                </button>
+              </Link>
             </div>
   )
 }
 
 const Formation = () => {
   return(
-    <div className="space-y-5 sm:p-16 pb-6">
+    <div className="space-y-5">
               <h1
                 data-aos="fade-up"
                 className="text-3xl sm:text-4xl font-bold font-serif"
@@ -76,8 +77,8 @@ const About = () => {
 
   return (
     <div className="dark:bg-dark bg-slate-100 sm:min-h-[600px] sm:grid sm:place-items-center duration-300">
-      <div className="container">
-        <div className="grid grid-cols-1 sm:grid-cols-2 place-items-center">
+      <div className="container pt-16 pb-8 px-0">
+        <div className="grid xl:grid-cols-2 place-items-center gap-10 lg:gap-16">
           <div data-aos="slide-right" data-aos-duration="1500">
             <img
               src={Carwebp}
