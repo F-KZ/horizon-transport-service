@@ -78,8 +78,8 @@ const App = () => {
           <Route path="/mentions" element={<Mentions />} />
           <Route path="/politique-de-confidentialite" element={<Politique />} />
           <Route path="/paiement" element={<StripePayment />} />
-          <Route path="/success" element={<Success />} />
-          <Route path="/cancel" element={<Cancel />} />
+          <Route path="/payment/success" element={<Success />} />
+          <Route path="/payment/cancel" element={<Cancel />} />
           <Route path="/adokent" element={<ADokent />} />
           <Route path="/formules" element={<FormulesDetail />} />
         </Routes>

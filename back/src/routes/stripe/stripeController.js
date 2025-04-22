@@ -37,8 +37,8 @@ export const stripeCheckout = async (req, res) => {
                 },
             ],
             mode: 'payment',
-            success_url: `${process.env.FRONT_URL}/success`,
-            cancel_url: `${process.env.FRONT_URL}/cancel`,
+            success_url: `${process.env.FRONT_URL}/payment/success`,
+            cancel_url: `${process.env.FRONT_URL}/payment/cancel`,
         });
 
         res.json({ url: session.url });
