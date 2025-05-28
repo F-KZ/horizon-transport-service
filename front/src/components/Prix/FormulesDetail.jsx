@@ -73,7 +73,7 @@ const FormulesDetail = () => {
               <FormulaCard
                 title="Formation Continue VTC"
                 description="14 heures de formation pratique avec accompagnement personnalisé"
-                price="350"
+                price="365"
                 type="vtc"
                 formation="continue"
                 icon={FaCar}
