@@ -35,7 +35,7 @@ const Slider = () => {
   return (
     <div className="relative w-full overflow-hidden">
       {/* Navigation Dots */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+      <div className="absolute bottom-2 sm:bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-1 sm:space-x-2 z-10">
         {slides.map((_, index) => (
           <button
             key={index}
@@ -46,7 +46,7 @@ const Slider = () => {
                 setTimeout(() => setIsTransitioning(false), 500);
               }
             }}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+            className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
               currentSlide === index ? 'bg-[#FFC727] scale-125' : 'bg-gray-400'
             }`}
           />
@@ -56,15 +56,15 @@ const Slider = () => {
       {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-black/50 p-2 rounded-full hover:bg-black/70 transition-colors"
+        className="absolute left-1 sm:left-4 top-1/2 transform -translate-y-1/2 z-10 bg-black/50 p-1 sm:p-2 rounded-full hover:bg-black/70 transition-colors"
       >
-        <FaChevronLeft className="text-[#FFC727] text-2xl" />
+        <FaChevronLeft className="text-[#FFC727] text-xl sm:text-2xl" />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-black/50 p-2 rounded-full hover:bg-black/70 transition-colors"
+        className="absolute right-1 sm:right-4 top-1/2 transform -translate-y-1/2 z-10 bg-black/50 p-1 sm:p-2 rounded-full hover:bg-black/70 transition-colors"
       >
-        <FaChevronRight className="text-[#FFC727] text-2xl" />
+        <FaChevronRight className="text-[#FFC727] text-xl sm:text-2xl" />
       </button>
 
       {/* Slides */}

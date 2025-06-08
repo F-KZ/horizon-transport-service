@@ -23,7 +23,7 @@ const Hero = ({ theme }) => {
   return (
     <div className="dark:bg-black dark:text-white duration-300 ">
       <div className="container min-h-[620px] flex">
-        <div className="grid grid-cols-1 sm:grid-cols-2 place-items-center">
+        <div className="flex flex-col mt-16 lg:mt-0 lg:flex-row place-items-center">
           <div
             data-aos="zoom-in"
             data-aos-duration="1500"
