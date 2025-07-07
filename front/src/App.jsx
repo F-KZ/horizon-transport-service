@@ -21,6 +21,7 @@ import Seo from "./components/Referencement/Seo";
 import StripePayment from './components/Paiement/StripePayment';
 import Success from './components/Paiement/Success';
 import Cancel from './components/Paiement/Cancel';
+import PayPalSuccess from './components/Paiement/PayPalSuccess';
 import ADokent from './components/Partenaire/ADokent';
 import ScrollToTop from './components/ScrollToTop';
 import CapacitéTransport from "./components/About/CapacitéTransport";
@@ -80,6 +81,7 @@ const App = () => {
           <Route path="/paiement" element={<StripePayment />} />
           <Route path="/payment/success" element={<Success />} />
           <Route path="/payment/cancel" element={<Cancel />} />
+          <Route path="/paypal/success" element={<PayPalSuccess />} />
           <Route path="/adokent" element={<ADokent />} />
           <Route path="/formules" element={<FormulesDetail />} />
         </Routes>

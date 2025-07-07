@@ -2,6 +2,7 @@ import dotenv from 'dotenv'
 import express from 'express'
 import Stripe from 'stripe'
 import stripeRoutes from './src/routes/stripe/index.js'
+import paypalRoutes from './src/routes/paypal/index.js'
 import cors from 'cors'
 import serverless from 'serverless-http'
 
@@ -31,6 +32,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/stripe', stripeRoutes) 
+app.use('/paypal', paypalRoutes) 
 
 const port = process.env.PORT || 3000
 
