@@ -65,8 +65,8 @@ export const createPayPalOrder = async (req, res) => {
         customId: `${type}_${formation}_${Date.now()}`
       }],
       applicationContext: {
-        returnUrl: `${process.env.FRONT_URL}/paypal/success`,
-        cancelUrl: `${process.env.FRONT_URL}/payment/cancel`,
+        returnUrl: `${process.env.BASE_URL_LOCAL}/paypal/success`,
+        cancelUrl: `${process.env.BASE_URL_LOCAL}/payment/cancel`,
         brandName: 'Horizon Transports',
         landingPage: 'BILLING',
         userAction: 'PAY_NOW',
