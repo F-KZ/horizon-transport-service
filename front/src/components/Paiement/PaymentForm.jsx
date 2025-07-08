@@ -17,7 +17,7 @@ const PaymentForm = ({ type, formation, price, title }) => {
     setError(null);
 
     try {
-      const response = await fetch(`${BACK_API}/stripe/checkout`, {
+      const response = await fetch(`${LOCAL_BACK}/stripe/checkout`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -51,7 +51,7 @@ const PaymentForm = ({ type, formation, price, title }) => {
     setError(null);
 
     try {
-      const response = await fetch(`${BACK_API}/paypal/create-order`, {
+      const response = await fetch(`${LOCAL_BACK}/paypal/create-order`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

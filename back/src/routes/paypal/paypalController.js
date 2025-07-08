@@ -1,22 +1,61 @@
-import paypal from '@paypal/paypal-server-sdk';
+import dotenv from 'dotenv'
 
-// Configuration PayPal
-let environment = new paypal.core.SandboxEnvironment(
-  process.env.PAYPAL_CLIENT_ID,
-  process.env.PAYPAL_CLIENT_SECRET
-);
+dotenv.config()
 
-if (process.env.NODE_ENV === 'production') {
-  environment = new paypal.core.LiveEnvironment(
-    process.env.PAYPAL_CLIENT_ID,
-    process.env.PAYPAL_CLIENT_SECRET
-  );
-}
+// Import dynamique de PayPal SDK
+let paypal;
+let client;
 
-const client = new paypal.core.PayPalHttpClient(environment);
+const initializePayPal = async () => {
+  if (!paypal) {
+    const paypalModule = await import('@paypal/paypal-server-sdk');
+    paypal = paypalModule.default;
+    
+    // Configuration PayPal avec la nouvelle structure
+    client = new paypal.Client({
+      clientCredentialsAuthCredentials: {
+        oAuthClientId: process.env.PAYPAL_CLIENT_ID,
+        oAuthClientSecret: process.env.PAYPAL_CLIENT_SECRET
+      },
+      timeout: 0,
+      environment: paypal.Environment.Sandbox,
+      logging: {
+        logLevel: paypal.LogLevel.Info,
+        logRequest: {
+          logBody: true
+        },
+        logResponse: {
+          logHeaders: true
+        }
+      },
+    });
+
+    if (process.env.NODE_ENV === 'production') {
+      client = new paypal.Client({
+        clientCredentialsAuthCredentials: {
+          oAuthClientId: process.env.PAYPAL_CLIENT_ID,
+          oAuthClientSecret: process.env.PAYPAL_CLIENT_SECRET
+        },
+        timeout: 0,
+        environment: paypal.Environment.Production,
+        logging: {
+          logLevel: paypal.LogLevel.Info,
+          logRequest: {
+            logBody: true
+          },
+          logResponse: {
+            logHeaders: true
+          }
+        },
+      });
+    }
+  }
+};
 
 export const createPayPalOrder = async (req, res) => {
   try {
+    await initializePayPal();
+    
     const { amount, type, formation, title } = req.body;
 
     // Validation des données
@@ -24,34 +63,34 @@ export const createPayPalOrder = async (req, res) => {
       return res.status(400).json({ error: 'Type et montant requis' });
     }
 
-    if (typeof amount !== 'string' || parseFloat(amount) <= 0) {
+    if (typeof amount !== 'string' && typeof amount !== 'number') {
       return res.status(400).json({ error: 'Montant invalide' });
     }
 
-    // Création de la commande PayPal
-    const request = new paypal.orders.OrdersCreateRequest();
-    request.prefer("return=representation");
-    request.requestBody({
+    // Création de la commande PayPal avec la nouvelle API
+    const ordersController = new paypal.OrdersController(client);
+    
+    const requestBody = {
       intent: 'CAPTURE',
-      purchase_units: [{
+      purchaseUnits: [{
         amount: {
-          currency_code: 'EUR',
-          value: amount
+          currencyCode: 'EUR',
+          value: amount.toString()
         },
         description: `Formation ${type.toUpperCase()} - ${formation}`,
-        custom_id: `${type}_${formation}_${Date.now()}`
+        customId: `${type}_${formation}_${Date.now()}`
       }],
-      application_context: {
-        return_url: `${process.env.FRONT_URL}/paypal/success`,
-        cancel_url: `${process.env.FRONT_URL}/payment/cancel`,
-        brand_name: 'Horizon Transports',
-        landing_page: 'BILLING',
-        user_action: 'PAY_NOW',
-        shipping_preference: 'NO_SHIPPING'
+      applicationContext: {
+        returnUrl: `${process.env.FRONT_URL}/paypal/success`,
+        cancelUrl: `${process.env.FRONT_URL}/payment/cancel`,
+        brandName: 'Horizon Transports',
+        landingPage: 'BILLING',
+        userAction: 'PAY_NOW',
+        shippingPreference: 'NO_SHIPPING'
       }
-    });
+    };
 
-    const order = await client.execute(request);
+    const order = await ordersController.createOrder({ body: requestBody });
 
     res.json({
       orderId: order.result.id,
@@ -66,22 +105,22 @@ export const createPayPalOrder = async (req, res) => {
 
 export const capturePayPalOrder = async (req, res) => {
   try {
+    await initializePayPal();
+    
     const { orderId } = req.body;
 
     if (!orderId) {
       return res.status(400).json({ error: 'Order ID requis' });
     }
 
-    const request = new paypal.orders.OrdersCaptureRequest(orderId);
-    request.requestBody({});
-
-    const capture = await client.execute(request);
+    const ordersController = new paypal.OrdersController(client);
+    const capture = await ordersController.captureOrder(orderId, { body: {} });
 
     if (capture.result.status === 'COMPLETED') {
       // Ici tu peux ajouter la logique pour sauvegarder la commande en base
       res.json({ 
         status: 'success',
-        transactionId: capture.result.purchase_units[0].payments.captures[0].id
+        transactionId: capture.result.purchaseUnits[0].payments.captures[0].id
       });
     } else {
       res.status(400).json({ error: 'Paiement non complété' });
@@ -95,10 +134,12 @@ export const capturePayPalOrder = async (req, res) => {
 
 export const getPayPalOrder = async (req, res) => {
   try {
+    await initializePayPal();
+    
     const { orderId } = req.params;
 
-    const request = new paypal.orders.OrdersGetRequest(orderId);
-    const order = await client.execute(request);
+    const ordersController = new paypal.OrdersController(client);
+    const order = await ordersController.getOrder(orderId);
 
     res.json(order.result);
 
