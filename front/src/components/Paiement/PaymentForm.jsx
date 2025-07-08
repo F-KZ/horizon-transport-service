@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useStripe, useElements, CardElement } from '@stripe/react-stripe-js';
 import { FaCreditCard, FaPaypal } from 'react-icons/fa';
 import { BACK_API,LOCAL_BACK } from '../utils/constant';
@@ -10,100 +10,6 @@ const PaymentForm = ({ type, formation, price, title }) => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [paymentMethod, setPaymentMethod] = useState('stripe'); // 'stripe' or 'paypal'
-  const [paypalLoaded, setPaypalLoaded] = useState(false);
-
-  // Charger le SDK PayPal
-  useEffect(() => {
-    if (paymentMethod === 'paypal' && !paypalLoaded) {
-      const script = document.createElement('script');
-      script.src = `https://www.paypal.com/sdk/js?client-id=${import.meta.env.VITE_PAYPAL_CLIENT_ID}&currency=EUR&env=${import.meta.env.VITE_PAYPAL_ENV}`;
-      script.onload = () => {
-        setPaypalLoaded(true);
-        initializePayPalButtons();
-      };
-      document.body.appendChild(script);
-
-      return () => {
-        // Cleanup
-        const existingScript = document.querySelector(`script[src*="paypal.com/sdk/js"]`);
-        if (existingScript) {
-          existingScript.remove();
-        }
-      };
-    }
-  }, [paymentMethod, paypalLoaded]);
-
-  const initializePayPalButtons = () => {
-    if (window.paypal) {
-      window.paypal.Buttons({
-        style: {
-          shape: "rect",
-          layout: "vertical",
-          color: "gold",
-          label: "paypal",
-        },
-        env: import.meta.env.VITE_PAYPAL_ENV,
-        async createOrder() {
-          try {
-            const response = await fetch(`${BACK_API}/paypal/create-order`, {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify({
-                amount: price,
-                type: type,
-                formation: formation,
-                title: title
-              }),
-            });
-
-            const orderData = await response.json();
-
-            if (orderData.orderId) {
-              return orderData.orderId;
-            }
-            
-            throw new Error(orderData.error || 'Erreur lors de la création de la commande');
-          } catch (error) {
-            console.error('PayPal createOrder error:', error);
-            setError('Erreur lors de la création de la commande PayPal');
-            throw error;
-          }
-        },
-        async onApprove(data, actions) {
-          try {
-            setLoading(true);
-            const response = await fetch(`${BACK_API}/paypal/capture-order`, {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify({ orderId: data.orderID }),
-            });
-
-            const orderData = await response.json();
-
-            if (orderData.status === 'success') {
-              // Redirection vers la page de succès
-              window.location.href = `${BACK_API}/paypal/success?orderId=${data.orderID}`;
-            } else {
-              throw new Error(orderData.error || 'Erreur lors de la capture du paiement');
-            }
-          } catch (error) {
-            console.error('PayPal onApprove error:', error);
-            setError('Erreur lors du traitement du paiement PayPal');
-          } finally {
-            setLoading(false);
-          }
-        },
-        onError: (err) => {
-          console.error('PayPal error:', err);
-          setError('Erreur PayPal: ' + err.message);
-        }
-      }).render('#paypal-button-container');
-    }
-  };
 
   const handleStripeSubmit = async (event) => {
     event.preventDefault();
@@ -135,6 +41,51 @@ const PaymentForm = ({ type, formation, price, title }) => {
 
     } catch (err) {
       setError('Une erreur est survenue lors du traitement du paiement');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handlePayPalSubmit = async () => {
+    setLoading(true);
+    setError(null);
+
+    try {
+      console.log('Creating PayPal order with data:', {
+        amount: price,
+        type: type,
+        formation: formation,
+        title: title
+      });
+
+      const response = await fetch(`${BACK_API}/paypal/create-order`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          amount: price,
+          type: type,
+          formation: formation,
+          title: title
+        }),
+      });
+
+      const data = await response.json();
+
+      console.log('PayPal order response:', data);
+
+      if (data.error) {
+        setError(data.error);
+        return;
+      }
+
+      // Rediriger vers PayPal
+      window.location.href = data.approvalUrl;
+
+    } catch (err) {
+      console.error('PayPal submit error:', err);
+      setError('Une erreur est survenue lors de la création de la commande PayPal');
     } finally {
       setLoading(false);
     }
@@ -204,15 +155,14 @@ const PaymentForm = ({ type, formation, price, title }) => {
           </button>
         </form>
       ) : (
-        <div className="space-y-4">
-          {!paypalLoaded && (
-            <div className="text-center py-4">
-              <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-[#0070BA] mx-auto"></div>
-              <p className="text-gray-400 mt-2">Chargement PayPal...</p>
-            </div>
-          )}
-          <div id="paypal-button-container"></div>
-        </div>
+        <button
+          onClick={handlePayPalSubmit}
+          disabled={loading}
+          className="w-full bg-[#0070BA] hover:bg-[#0070BA]/90 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition-all duration-200 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+        >
+          <FaPaypal />
+          {loading ? 'Redirection...' : 'Payer avec PayPal'}
+        </button>
       )}
 
       <div className="mt-8 text-center text-gray-400">

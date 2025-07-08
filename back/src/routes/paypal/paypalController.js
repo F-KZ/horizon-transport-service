@@ -65,8 +65,8 @@ export const createPayPalOrder = async (req, res) => {
         customId: `${type}_${formation}_${Date.now()}`
       }],
       applicationContext: {
-        returnUrl: `${process.env.BASE_URL_LOCAL}/paypal/success`,
-        cancelUrl: `${process.env.BASE_URL_LOCAL}/payment/cancel`,
+        returnUrl: `${process.env.FRONT_URL}/paypal/success`,
+        cancelUrl: `${process.env.FRONT_URL}/payment/cancel`,
         brandName: 'Horizon Transports',
         landingPage: 'BILLING',
         userAction: 'PAY_NOW',
@@ -93,25 +93,42 @@ export const capturePayPalOrder = async (req, res) => {
     
     const { orderId } = req.body;
 
+    console.log('=== PAYPAL CAPTURE DEBUG ===');
+    console.log('Request body:', req.body);
+    console.log('OrderId received:', orderId);
+    console.log('OrderId type:', typeof orderId);
+
     if (!orderId) {
+      console.log('OrderId is missing or undefined');
       return res.status(400).json({ error: 'Order ID requis' });
     }
 
     const ordersController = new paypal.OrdersController(client);
-    const capture = await ordersController.captureOrder(orderId, { body: {} });
+    
+    console.log('Attempting to capture order with ID:', orderId);
+    
+    const capture = await ordersController.captureOrder({ id: orderId });
+
+    console.log('Capture result:', capture.result);
+    console.log('Capture status:', capture.result.status);
 
     if (capture.result.status === 'COMPLETED') {
+      console.log('Payment completed successfully');
       // Ici tu peux ajouter la logique pour sauvegarder la commande en base
       res.json({ 
         status: 'success',
         transactionId: capture.result.purchaseUnits[0].payments.captures[0].id
       });
     } else {
+      console.log('Payment not completed, status:', capture.result.status);
       res.status(400).json({ error: 'Paiement non complété' });
     }
 
   } catch (error) {
-    console.error('PayPal capture error:', error);
+    console.error('=== PAYPAL CAPTURE ERROR ===');
+    console.error('Error details:', error);
+    console.error('Error message:', error.message);
+    console.error('Error stack:', error.stack);
     res.status(500).json({ error: 'Erreur lors de la capture du paiement' });
   }
 };

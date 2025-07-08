@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Navbar2 from '../Navbar/Navbar2';
 import { Link } from 'react-router-dom';
-import { BACK_API } from '../utils/constant';
+import { BACK_API, LOCAL_BACK } from '../utils/constant';
 
 const PayPalSuccess = () => {
   const [searchParams] = useSearchParams();
@@ -12,7 +12,11 @@ const PayPalSuccess = () => {
   useEffect(() => {
     const capturePayment = async () => {
       try {
-        const orderId = searchParams.get('token'); // PayPal retourne 'token' au lieu de 'session_id'
+        // PayPal retourne 'token' dans l'URL de retour
+        const orderId = searchParams.get('token');
+        
+        console.log('PayPal return - orderId:', orderId);
+        console.log('All search params:', Object.fromEntries(searchParams.entries()));
         
         if (!orderId) {
           setStatus('error');
@@ -30,6 +34,7 @@ const PayPalSuccess = () => {
         });
 
         const data = await response.json();
+        console.log('Capture response:', data);
 
         if (data.status === 'success') {
           setStatus('success');
