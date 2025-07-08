@@ -14,11 +14,14 @@ export const stripeCheckout = async (req, res) => {
             return res.status(400).json({ error: 'Type et montant requis' });
         }
 
-    
-
         if (typeof amount !== 'number' || amount <= 0) {
             return res.status(400).json({ error: 'Montant invalide' });
         }
+
+        // Calculate price breakdown for description
+        const priceWithVAT = amount / 100; // Convert from cents to euros
+        const priceWithoutVAT = Math.round(priceWithVAT / 1.2);
+        const vatAmount = priceWithVAT - priceWithoutVAT;
 
         // Création de la session Stripe
         const session = await stripe.checkout.sessions.create({
@@ -29,7 +32,7 @@ export const stripeCheckout = async (req, res) => {
                         currency: 'eur',
                         product_data: {
                             name: title,
-                            description: `Formation ${type.toUpperCase()} - ${formation}`,
+                            description: `Formation ${type.toUpperCase()} - ${formation} (Prix HT: ${priceWithoutVAT}€ + TVA 20%: ${vatAmount}€ = Total TTC: ${priceWithVAT}€)`,
                         },
                         unit_amount: amount,
                     },

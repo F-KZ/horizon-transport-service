@@ -18,6 +18,11 @@ const StripePayment = () => {
   const price = searchParams.get('price');
   const title = searchParams.get('title');
 
+  // Calculate price breakdown
+  const priceWithVAT = parseInt(price);
+  const priceWithoutVAT = Math.round(priceWithVAT / 1.2);
+  const vatAmount = priceWithVAT - priceWithoutVAT;
+
   return (
     <div className="min-h-screen-[68vh] bg-black">
       <div className="fixed top-0 left-0 right-0 z-50">
@@ -51,8 +56,20 @@ const StripePayment = () => {
             </Elements>
 
             <div className="mt-6 pt-6 border-t border-gray-700">
-              <p className="text-gray-400 text-sm">Montant total à payer</p>
-              <p className="text-xl font-semibold text-[#FFC727]">{price}€</p>
+              <div className="space-y-2">
+                <div className="flex justify-between text-gray-400">
+                  <span>Prix HT:</span>
+                  <span>{priceWithoutVAT}€</span>
+                </div>
+                <div className="flex justify-between text-gray-400">
+                  <span>TVA (20%):</span>
+                  <span>{vatAmount}€</span>
+                </div>
+                <div className="flex justify-between text-xl font-semibold text-[#FFC727] border-t border-gray-600 pt-2">
+                  <span>Total TTC:</span>
+                  <span>{priceWithVAT}€</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

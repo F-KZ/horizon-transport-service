@@ -51,6 +51,11 @@ export const createPayPalOrder = async (req, res) => {
       return res.status(400).json({ error: 'Montant invalide' });
     }
 
+    // Calculate price breakdown for description
+    const priceWithVAT = parseFloat(amount);
+    const priceWithoutVAT = Math.round(priceWithVAT / 1.2);
+    const vatAmount = priceWithVAT - priceWithoutVAT;
+
     // Création de la commande PayPal avec la nouvelle API
     const ordersController = new paypal.OrdersController(client);
     
@@ -61,7 +66,7 @@ export const createPayPalOrder = async (req, res) => {
           currencyCode: 'EUR',
           value: amount.toString()
         },
-        description: `Formation ${type.toUpperCase()} - ${formation}`,
+        description: `Formation ${type.toUpperCase()} - ${formation} (Prix HT: ${priceWithoutVAT}€ + TVA 20%: ${vatAmount}€ = Total TTC: ${priceWithVAT}€)`,
         customId: `${type}_${formation}_${Date.now()}`
       }],
       applicationContext: {

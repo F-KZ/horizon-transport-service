@@ -3,30 +3,36 @@ import Navbar2 from '../Navbar/Navbar2';
 import { Link } from 'react-router-dom';
 import ScrollToTop from '../ScrollToTop';
 import { FaCheckCircle, FaCar, FaTaxi, FaTruck, FaCarSide } from 'react-icons/fa';
+import { calculatePriceWithVAT, formatPriceWithVAT } from '../utils/constant';
 
 const FormulesDetail = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const FormulaCard = ({ title, description, price, type, formation, icon: Icon }) => (
-    <div className="bg-gray-800 p-6 rounded-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#FFC727]/20">
-      <div className="flex items-center gap-4 mb-4">
-        <Icon className="text-3xl text-[#FFC727]" />
-        <div className="flex-1">
-          <h3 className="text-xl font-semibold text-white">{title}</h3>
-          <p className="text-sm text-gray-400 mt-1">À partir de {price}€</p>
+  const FormulaCard = ({ title, description, price, type, formation, icon: Icon }) => {
+    const priceWithVAT = calculatePriceWithVAT(parseInt(price));
+    
+    return (
+      <div className="bg-gray-800 p-6 rounded-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#FFC727]/20">
+        <div className="flex items-center gap-4 mb-4">
+          <Icon className="text-3xl text-[#FFC727]" />
+          <div className="flex-1">
+            <h3 className="text-xl font-semibold text-white">{title}</h3>
+            <p className="text-sm text-gray-400 mt-1">À partir de {formatPriceWithVAT(price)}</p>
+            <p className="text-xs text-gray-500">Prix HT: {price}€ | TVA 20% incluse</p>
+          </div>
         </div>
+        <p className="text-gray-300 mb-4">{description}</p>
+        <Link 
+          to={`/paiement?type=${type}&formation=${formation}&price=${priceWithVAT}&title=${title}`} 
+          className="block w-full bg-[#FFC727] text-black font-semibold py-3 px-4 rounded-lg text-center hover:bg-[#FFC727]/90 transition-colors mt-4 transform hover:scale-105"
+        >
+          S'inscrire
+        </Link>
       </div>
-      <p className="text-gray-300 mb-4">{description}</p>
-      <Link 
-        to={`/paiement?type=${type}&formation=${formation}&price=${price}&title=${title}`} 
-        className="block w-full bg-[#FFC727] text-black font-semibold py-3 px-4 rounded-lg text-center hover:bg-[#FFC727]/90 transition-colors mt-4 transform hover:scale-105"
-      >
-        S'inscrire
-      </Link>
-    </div>
-  );
+    );
+  };
 
   return (
     <div className="min-h-screen bg-black">
@@ -175,7 +181,7 @@ const FormulesDetail = () => {
               <FormulaCard
                 title="Location de vehicule homologué"
                 description="Location de véhicule homologué aux normes de l'examen avec assurance et assistance le jour de l'examen"
-                price="1"
+                price="100"
                 type="location"
                 formation="homologue"
                 icon={FaCarSide}

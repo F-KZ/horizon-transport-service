@@ -23,7 +23,7 @@ const PaymentForm = ({ type, formation, price, title }) => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          amount: parseInt(price) * 100,
+          amount: parseInt(price) * 100, // price already includes VAT
           type: type,
           formation: formation,
           title: title
@@ -52,7 +52,7 @@ const PaymentForm = ({ type, formation, price, title }) => {
 
     try {
       console.log('Creating PayPal order with data:', {
-        amount: price,
+        amount: price, // price already includes VAT
         type: type,
         formation: formation,
         title: title
@@ -64,7 +64,7 @@ const PaymentForm = ({ type, formation, price, title }) => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          amount: price,
+          amount: price, // price already includes VAT
           type: type,
           formation: formation,
           title: title
