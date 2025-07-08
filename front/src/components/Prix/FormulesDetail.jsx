@@ -175,7 +175,7 @@ const FormulesDetail = () => {
               <FormulaCard
                 title="Location de vehicule homologué"
                 description="Location de véhicule homologué aux normes de l'examen avec assurance et assistance le jour de l'examen"
-                price="100"
+                price="1"
                 type="location"
                 formation="homologue"
                 icon={FaCarSide}
