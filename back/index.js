@@ -22,6 +22,21 @@ app.use(cors({
   credentials: true
 }))
 
+// Configuration CSP pour PayPal
+app.use((req, res, next) => {
+  res.setHeader(
+    'Content-Security-Policy',
+    [
+      "script-src 'unsafe-inline' https://*.paypal.com https://*.paypalobjects.com",
+      "style-src 'unsafe-inline' https://*.paypal.com",
+      "connect-src https://*.paypal.com",
+      "frame-src https://*.paypal.com",
+      "img-src https://*.paypal.com https://*.paypalobjects.com"
+    ].join('; ')
+  );
+  next();
+});
+
 app.use(express.json())
 app.use(express.urlencoded({ extended: true })) 
 

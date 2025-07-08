@@ -11,14 +11,16 @@ const initializePayPal = async () => {
     const paypalModule = await import('@paypal/paypal-server-sdk');
     paypal = paypalModule.default;
     
-    // Configuration PayPal avec la nouvelle structure
+    // Configuration PayPal - Production par défaut
+    const isProduction = process.env.NODE_ENV === 'production' || process.env.PAYPAL_ENVIRONMENT === 'production';
+    
     client = new paypal.Client({
       clientCredentialsAuthCredentials: {
         oAuthClientId: process.env.PAYPAL_CLIENT_ID,
         oAuthClientSecret: process.env.PAYPAL_CLIENT_SECRET
       },
       timeout: 0,
-      environment: paypal.Environment.Sandbox,
+      environment: isProduction ? paypal.Environment.Production : paypal.Environment.Sandbox,
       logging: {
         logLevel: paypal.LogLevel.Info,
         logRequest: {
@@ -30,25 +32,7 @@ const initializePayPal = async () => {
       },
     });
 
-    if (process.env.NODE_ENV === 'production') {
-      client = new paypal.Client({
-        clientCredentialsAuthCredentials: {
-          oAuthClientId: process.env.PAYPAL_CLIENT_ID,
-          oAuthClientSecret: process.env.PAYPAL_CLIENT_SECRET
-        },
-        timeout: 0,
-        environment: paypal.Environment.Production,
-        logging: {
-          logLevel: paypal.LogLevel.Info,
-          logRequest: {
-            logBody: true
-          },
-          logResponse: {
-            logHeaders: true
-          }
-        },
-      });
-    }
+    console.log(`PayPal environment: ${isProduction ? 'PRODUCTION' : 'SANDBOX'}`);
   }
 };
 
