@@ -5,6 +5,8 @@ import {
   FaPhoneAlt,
   FaAt,
   FaMobileAlt,
+  FaFacebook,
+  FaLinkedin,
 } from "react-icons/fa";
 import MyForm from "./Formulaire";
 
@@ -55,6 +57,34 @@ const Form = () => {
                   </a>
                 </div>
               </div>
+
+              <div className="flex items-center space-x-4">
+                <div className="bg-blue-600 p-3 rounded-full">
+                  <FaFacebook className="text-white text-xl" />
+                </div>
+                <div>
+                  <h3 className="text-white font-semibold">Horizon Transport formation</h3>
+                  <a href="https://www.facebook.com/profile.php?id=61579069833289" className="text-gray-300 hover:text-blue-500 transition-colors">
+                    Facebook
+                  </a>
+                </div>
+              </div>
+              
+              { /*
+              <div className="flex items-center space-x-4">
+                <div className="bg-blue-600 p-3 rounded-full">
+                  <FaLinkedin className="text-white text-xl" />
+                </div>
+                <div>
+                  <h3 className="text-white font-semibold">Horizon Transport formation</h3>
+                  <a href="https://www.facebook.com/profile.php?viewas=100000686899395&id=61579069833289" className="text-gray-300 hover:text-blue-500 transition-colors">
+                    Linkedin
+                  </a>
+                </div>
+              </div>
+                   */}
+
+              
 
               <div className="flex items-center space-x-4">
                 <div className="bg-blue-600 p-3 rounded-full">

@@ -71,7 +71,7 @@ const FormulesDetail = () => {
               <FormulaCard
                 title="Formation VTC Complète"
                 description="Formation intensive avec examen"
-                price="2449"
+                price="1900"
                 type="vtc"
                 formation="complete"
                 icon={FaCar}
@@ -80,6 +80,14 @@ const FormulesDetail = () => {
                 title="Formation Continue VTC"
                 description="14 heures de formation pratique avec accompagnement personnalisé"
                 price="365"
+                type="vtc"
+                formation="continue"
+                icon={FaCar}
+              />
+              <FormulaCard
+                title="Formation Passerelle VTC > Taxi"
+                description="35 heures de formation pratique avec accompagnement personnalisé"
+                price="780"
                 type="vtc"
                 formation="continue"
                 icon={FaCar}
@@ -105,7 +113,7 @@ const FormulesDetail = () => {
               <FormulaCard
                 title="Formation Taxi 3h"
                 description="Formation courte pour les conducteurs expérimentés"
-                price="680"
+                price="480"
                 type="taxi"
                 formation="3h"
                 icon={FaTaxi}
@@ -113,7 +121,7 @@ const FormulesDetail = () => {
               <FormulaCard
                 title="Formation Taxi 7h"
                 description="Formation complète pour les nouveaux conducteurs"
-                price="780"
+                price="680"
                 type="taxi"
                 formation="7h"
                 icon={FaTaxi}
@@ -121,7 +129,7 @@ const FormulesDetail = () => {
               <FormulaCard
                 title="Formation Taxi Complète"
                 description="Formation intensive avec examen"
-                price="2449"
+                price="1900"
                 type="taxi"
                 formation="complete"
                 icon={FaTaxi}
@@ -129,15 +137,24 @@ const FormulesDetail = () => {
               <FormulaCard
                 title="Formation Continue Taxi"
                 description="14 heures de formation pratique avec accompagnement personnalisé"
-                price="350"
+                price="365"
                 type="taxi"
                 formation="continue"
                 icon={FaTaxi}
               />
               <FormulaCard
+                title="Formation Passerelle Taxi > VTC"
+                description="35 heures de formation pratique avec accompagnement personnalisé"
+                price="825"
+                type="taxi"
+                formation="continue"
+                icon={FaTaxi}
+              />
+
+              <FormulaCard
                 title="Formation Mobilité Taxi"
                 description="14 heures de formation pratique avec préparation à l'examen"
-                price="350"
+                price="465"
                 type="taxi"
                 formation="mobilite"
                 icon={FaTaxi}
@@ -153,7 +170,7 @@ const FormulesDetail = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <FormulaCard
-                title="Véhicules n'excédant pas 9 places"
+                title="Formation capacité léger de transport de 9 places"
                 description="Formation pour le transport de personnes avec des véhicules de moins de 9 places"
                 price="1999"
                 type="transport"
@@ -161,7 +178,7 @@ const FormulesDetail = () => {
                 icon={FaTruck}
               />
               <FormulaCard
-                title="Transport Léger de Marchandises"
+                title="Formation capacité léger de transport - 3T5"
                 description="Formation pour le transport routier de marchandises au moyen de véhicules légers"
                 price="1500"
                 type="transport"

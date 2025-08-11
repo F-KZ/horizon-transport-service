@@ -12,7 +12,7 @@ const Formules = () => {
         
         <div className="flex justify-center">
           <Link to="/formules">
-            <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition-all duration-200 transform hover:scale-105">
+            <button className="bg-primary hover:bg-primary/80 text-black font-bold py-3 px-6 rounded-lg shadow-lg transition-all duration-200 transform hover:scale-105">
               Voir toutes nos formules
             </button>
           </Link>
