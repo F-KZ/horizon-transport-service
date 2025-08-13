@@ -1,22 +1,14 @@
 import React from 'react';
+import { downloadFiles } from '../utils/constant';
+import { PDF_Taxi } from '../utils/constant';
 
-const PDF_URL = "https://horizontransports.fr/Taxi.pdf";
+
 
 const Taxi = () => {
-  const downloadFiles = (url) => {
-    const link = document.createElement('a')
-    const fileName = url.split('/').pop()
-
-   // link.download = "image.webp"
-    link.href = url
-    link.setAttribute('download', fileName)
-    link.click()
-  }
   
-
   return (
     <div>
-      <p onClick={() => { downloadFiles(PDF_URL) }} className='cursor-pointer'>Programme Taxi</p>
+      <p onClick={() => { downloadFiles(PDF_Taxi) }} className='cursor-pointer'>Programme Taxi</p>
     </div>
   );
 };

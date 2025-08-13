@@ -7,10 +7,15 @@ import {
   FaMobileAlt,
   FaFacebook,
   FaLinkedin,
+  FaAddressCard
 } from "react-icons/fa";
 import MyForm from "./Formulaire";
+import { downloadFiles } from "../utils/constant";
+import { PDF_FicheContact } from "../utils/constant";
 
 const Form = () => {
+
+
   return (
     <div className="py-12 bg-black">
       <span id="Info"></span>
@@ -70,19 +75,17 @@ const Form = () => {
                 </div>
               </div>
               
-              { /*
+              
               <div className="flex items-center space-x-4">
                 <div className="bg-blue-600 p-3 rounded-full">
-                  <FaLinkedin className="text-white text-xl" />
+                  <FaAddressCard className="text-white text-xl" />
                 </div>
                 <div>
-                  <h3 className="text-white font-semibold">Horizon Transport formation</h3>
-                  <a href="https://www.facebook.com/profile.php?viewas=100000686899395&id=61579069833289" className="text-gray-300 hover:text-blue-500 transition-colors">
-                    Linkedin
-                  </a>
+                  <h3 className="text-white font-semibold">Fiche d'inscription</h3>
+                  <p onClick={() => { downloadFiles(PDF_FicheContact) }} className='cursor-pointer'>cliquez ici</p>
                 </div>
               </div>
-                   */}
+                 
 
               
 
