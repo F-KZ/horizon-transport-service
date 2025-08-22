@@ -53,32 +53,32 @@ const FormulesDetail = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <FormulaCard
-                title="Formation VTC 3h"
-                description="Formation courte pour les conducteurs expérimentés"
+                title="Formule Pratique examen VTC 3h"
+                description="Formule examen pratique, véhicule double commande inclus avec confiseries, bouteilles d'eau, magazines et journaux."
                 price="380"
                 type="vtc"
                 formation="3h"
                 icon={FaCar}
               />
               <FormulaCard
-                title="Formation VTC 7h"
-                description="Formation complète pour les nouveaux conducteurs"
+                title="Formule Pratique examen VTC 7h"
+                description="Formule examen pratique, véhicule double commande inclus avec confiseries, bouteilles d'eau, magazines et journaux. "
                 price="580"
                 type="vtc"
                 formation="7h"
                 icon={FaCar}
               />
               <FormulaCard
-                title="Formation VTC Complète"
-                description="Formation intensive avec examen"
-                price="1900"
+                title="Formation initiale VTC Complète"
+                description="Formule complète examen théorique et pratique, véhicule double commande inclus avec confiseries, bouteilles d'eau, magazines et journaux."
+                price="2449"
                 type="vtc"
                 formation="complete"
                 icon={FaCar}
               />
               <FormulaCard
                 title="Formation Continue VTC"
-                description="14 heures de formation pratique avec accompagnement personnalisé"
+                description="14 heures de formation obligatoire en présentiel."
                 price="365"
                 type="vtc"
                 formation="continue"
@@ -86,16 +86,16 @@ const FormulesDetail = () => {
               />
               <FormulaCard
                 title="Formation Passerelle VTC > Taxi"
-                description="35 heures de formation pratique avec accompagnement personnalisé"
-                price="780"
+                description="Formule complète examen théorique et pratique, véhicule double commande inclus avec confiseries, bouteilles d'eau, magazines et journaux."
+                price="945"
                 type="vtc"
                 formation="continue"
                 icon={FaCar}
               />
               <FormulaCard
-                title="Formation Passerelle VTC ou Taxi"
-                description="14 heures de formation pratique avec préparation à l'examen"
-                price="780"
+                title="Formation initiale VTC formule compléte coup de pouce"
+                description="Formule complète pour budget sans financement examen théorique et pratique, véhicule double commande inclus avec confiseries, bouteilles d'eau, magazines et journaux."
+                price="1600"
                 type="vtc"
                 formation="passerelle"
                 icon={FaCar}
@@ -111,32 +111,32 @@ const FormulesDetail = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <FormulaCard
-                title="Formation Taxi 3h"
-                description="Formation courte pour les conducteurs expérimentés"
+                title="Formule Pratique examen Taxi 3h"
+                description="Formule examen pratique, véhicule double commande inclus avec confiseries, bouteilles d'eau, magazines et journaux. "
                 price="480"
                 type="taxi"
                 formation="3h"
                 icon={FaTaxi}
               />
               <FormulaCard
-                title="Formation Taxi 7h"
-                description="Formation complète pour les nouveaux conducteurs"
+                title="Formule Pratique examen Taxi 7h"
+                description="Formule examen pratique, véhicule double commande inclus avec confiseries, bouteilles d'eau, magazines et journaux. "
                 price="680"
                 type="taxi"
                 formation="7h"
                 icon={FaTaxi}
               />
               <FormulaCard
-                title="Formation Taxi Complète"
-                description="Formation intensive avec examen"
-                price="1900"
+                title="Formation initiale TAXI Complète"
+                description="Formule complète examen théorique et pratique, véhicule double commande inclus avec confiseries, bouteilles d'eau, magazines et journaux."
+                price="2449"
                 type="taxi"
                 formation="complete"
                 icon={FaTaxi}
               />
               <FormulaCard
                 title="Formation Continue Taxi"
-                description="14 heures de formation pratique avec accompagnement personnalisé"
+                description="14 heures de formation obligatoire en présentiel."
                 price="365"
                 type="taxi"
                 formation="continue"
@@ -144,7 +144,7 @@ const FormulesDetail = () => {
               />
               <FormulaCard
                 title="Formation Passerelle Taxi > VTC"
-                description="35 heures de formation pratique avec accompagnement personnalisé"
+                description="Formule complète examen théorique et pratique, véhicule double commande inclus avec confiseries, bouteilles d'eau, magazines et journaux."
                 price="825"
                 type="taxi"
                 formation="continue"
@@ -153,11 +153,20 @@ const FormulesDetail = () => {
 
               <FormulaCard
                 title="Formation Mobilité Taxi"
-                description="14 heures de formation pratique avec préparation à l'examen"
+                description="14 heures de formation obligatoire en présentiel."
                 price="465"
                 type="taxi"
                 formation="mobilite"
                 icon={FaTaxi}
+              />
+
+<FormulaCard
+                title="Formation initiale TAXI formule compléte coup de pouce"
+                description="Formule complète pour budget sans financement examen théorique et pratique, véhicule double commande inclus avec confiseries, bouteilles d'eau, magazines et journaux."
+                price="1600"
+                type="vtc"
+                formation="passerelle"
+                icon={FaCar}
               />
             </div>
           </div>
@@ -170,7 +179,7 @@ const FormulesDetail = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <FormulaCard
-                title="Formation capacité léger de transport de 9 places"
+                title="Formation capacité léger de transport moins de 9 places"
                 description="Formation pour le transport de personnes avec des véhicules de moins de 9 places"
                 price="1999"
                 type="transport"
@@ -179,7 +188,7 @@ const FormulesDetail = () => {
               />
               <FormulaCard
                 title="Formation capacité léger de transport - 3T5"
-                description="Formation pour le transport routier de marchandises au moyen de véhicules légers"
+                description="Formation pour le transport routier de marchandises au moyen de véhicules légers de moins de 3T5"
                 price="1500"
                 type="transport"
                 formation="leger"
@@ -198,7 +207,7 @@ const FormulesDetail = () => {
               <FormulaCard
                 title="Location de vehicule homologué"
                 description="Location de véhicule homologué aux normes de l'examen avec assurance et assistance le jour de l'examen"
-                price="100"
+                price="99"
                 type="location"
                 formation="homologue"
                 icon={FaCarSide}
