@@ -108,7 +108,7 @@ const Form = () => {
                 <div>
                   <h3 className="text-white font-semibold">Adresse</h3>
                   <p className="text-gray-300">
-                    56 Rue Desseaux<br />
+                    59 Rue Desseaux<br />
                     76100 Rouen
                   </p>
                 </div>
