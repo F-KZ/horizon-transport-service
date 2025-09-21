@@ -108,8 +108,8 @@ const Form = () => {
                 <div>
                   <h3 className="text-white font-semibold">Adresse</h3>
                   <p className="text-gray-300">
-                    46 RUE LEON MALETRA<br />
-                    76140 PETIT-QUEVILLY
+                    56 Rue Desseaux<br />
+                    76100 Rouen
                   </p>
                 </div>
               </div>

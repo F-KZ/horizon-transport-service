@@ -79,7 +79,7 @@ const Footer = () => {
             <br />
             <div className="flex items-center gap-3">
               <FaLocationArrow />
-              <p className="font-extralight text-sm">46 RUE LEON MALETRA, 76140 Petit-Quevilly</p>
+              <p className="font-extralight text-sm">56 Rue Desseaux, 76100 Rouen</p>
             </div>
             <div className="flex items-center gap-3 mt-3">
               <FaMobileAlt />
