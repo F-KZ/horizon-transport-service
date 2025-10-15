@@ -68,9 +68,9 @@ const Form = () => {
                   <FaFacebook className="text-white text-xl" />
                 </div>
                 <div>
-                  <h3 className="text-white font-semibold">Horizon Transport formation</h3>
+                  <h3 className="text-white font-semibold">Facebook</h3>
                   <a href="https://www.facebook.com/profile.php?id=61579069833289" className="text-gray-300 hover:text-blue-500 transition-colors">
-                    Facebook
+                    Horizon Transport formation
                   </a>
                 </div>
               </div>

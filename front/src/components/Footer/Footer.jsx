@@ -6,6 +6,7 @@ import {
 import { Link } from 'react-router-dom';
 import borcel from "../../assets/logo.webp";
 import qualio from "../../assets/qualio2.webp";
+import cpf from "../../assets/logo-cpf.png"
 import Programme from "../programme/Programme";
 import Taxi from "../programme/Taxi";
 
@@ -95,6 +96,8 @@ const Footer = () => {
                 height={200}
                 className='cursor-pointer'
               />
+              
+             
               <div className="flex flex-col gap-3">
               <button // Separate button for PDF_VTC
                 className="ml-4 px-4 py-2 text-white font-thin text-sm rounded-lg"
@@ -108,12 +111,21 @@ const Footer = () => {
               </button>
               </div>
             </div>
+           
           </div>
           {/* <div className="footer">
         <h1>
           Made with ❤ by <a href="https://dilshad-ahmed.github.io/">Dilshad</a>{" "}
         </h1>
-      </div>*/}
+      
+       <img
+                src={cpf}
+                alt="Logo CPF"
+                width={100}
+                height={100}
+                className='cursor-pointer'
+              />
+              </div>*/}
         </div>
       </section>
     </div>

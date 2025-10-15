@@ -4,17 +4,19 @@ import { Link } from 'react-router-dom';
 import ScrollToTop from '../ScrollToTop';
 import { FaCheckCircle, FaCar, FaTaxi, FaTruck, FaCarSide } from 'react-icons/fa';
 import { calculatePriceWithVAT, formatPriceWithVAT } from '../utils/constant';
+import cpf from "../../assets/cpf.png"
+
 
 const FormulesDetail = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const FormulaCard = ({ title, description, price, type, formation, icon: Icon }) => {
+  const FormulaCard = ({ title, description, price, type, formation, icon: Icon, img, url }) => {
     const priceWithVAT = calculatePriceWithVAT(parseInt(price));
     
     return (
-      <div className="bg-gray-800 p-6 rounded-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#FFC727]/20">
+      <div className=" flex flex-col justify-between bg-gray-800 p-6 rounded-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#FFC727]/20">
         <div className="flex items-center gap-4 mb-4">
           <Icon className="text-3xl text-[#FFC727]" />
           <div className="flex-1">
@@ -22,10 +24,13 @@ const FormulesDetail = () => {
             <p className="text-sm text-gray-400 mt-1">À partir de {formatPriceWithVAT(price)}</p>
             <p className="text-xs text-gray-500">Prix HT: {price}€ | TVA 20% incluse</p>
           </div>
+          {
+            img ? <img className="w-14" src={img} alt='logo CPF'/> : null
+          }
         </div>
         <p className="text-gray-300 mb-4">{description}</p>
         <Link 
-          to={`/paiement?type=${type}&formation=${formation}&price=${priceWithVAT}&title=${title}`} 
+          to={`/paiement?type=${type}&formation=${formation}&price=${priceWithVAT}&title=${title}${url ? `&url=${encodeURIComponent(url)}` : ''}`} 
           className="block w-full bg-[#FFC727] text-black font-semibold py-3 px-4 rounded-lg text-center hover:bg-[#FFC727]/90 transition-colors mt-4 transform hover:scale-105"
         >
           S'inscrire
@@ -75,6 +80,8 @@ const FormulesDetail = () => {
                 type="vtc"
                 formation="complete"
                 icon={FaCar}
+                img={cpf}
+                url="https://www.moncompteformation.gouv.fr/espace-prive/html/#/formation/recherche/98145599100019_VTC-2025-01/98145599100019_VTC-2025-01"
               />
               <FormulaCard
                 title="Formation Continue VTC"
@@ -85,12 +92,14 @@ const FormulesDetail = () => {
                 icon={FaCar}
               />
               <FormulaCard
-                title="Formation Passerelle VTC > Taxi"
+                title="Formation Mobilité Professionnelle VTC > Taxi"
                 description="Formule complète examen théorique et pratique, véhicule double commande inclus avec confiseries, bouteilles d'eau, magazines et journaux."
                 price="945"
                 type="vtc"
-                formation="continue"
+                formation="mobilité professionnelle"
                 icon={FaCar}
+                img={cpf}
+                url="https://www.moncompteformation.gouv.fr/espace-prive/html/#/formation/recherche/98145599100019_VTC-2025-002/98145599100019_VTC-2025-002"
               />
               <FormulaCard
                 title="Formation initiale VTC formule compléte coup de pouce"
@@ -133,6 +142,8 @@ const FormulesDetail = () => {
                 type="taxi"
                 formation="complete"
                 icon={FaTaxi}
+                img={cpf}
+                url="https://www.moncompteformation.gouv.fr/espace-prive/html/#/formation/recherche/98145599100019_TX-2025-01/98145599100019_TX-2025-01"
               />
               <FormulaCard
                 title="Formation Continue Taxi"
@@ -143,12 +154,14 @@ const FormulesDetail = () => {
                 icon={FaTaxi}
               />
               <FormulaCard
-                title="Formation Passerelle Taxi > VTC"
+                title="Formation Mobilité Professionnelle Taxi > VTC"
                 description="Formule complète examen théorique et pratique, véhicule double commande inclus avec confiseries, bouteilles d'eau, magazines et journaux."
                 price="825"
                 type="taxi"
-                formation="continue"
+                formation="mobilité professionnelle"
                 icon={FaTaxi}
+                img={cpf}
+                url="https://www.moncompteformation.gouv.fr/espace-prive/html/#/formation/recherche/98145599100019_TX-2025-02/98145599100019_TX-2025-02"
               />
 
               <FormulaCard

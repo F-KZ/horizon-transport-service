@@ -17,6 +17,7 @@ const StripePayment = () => {
   const formation = searchParams.get('formation');
   const price = searchParams.get('price');
   const title = searchParams.get('title');
+  const url = searchParams.get('url');
 
   // Calculate price breakdown
   const priceWithVAT = parseInt(price);
@@ -52,6 +53,7 @@ const StripePayment = () => {
                 formation={formation}
                 price={price}
                 title={title}
+                url={url}
               />
             </Elements>
 
