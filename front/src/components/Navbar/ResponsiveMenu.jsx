@@ -1,49 +1,96 @@
 import React from "react";
-import { FaUserCircle, FaArrowCircleLeft  } from "react-icons/fa";
-import { ImCross } from "react-icons/im";
+import { FaUserCircle, FaTimes } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
-import { Navlinks } from "./Navbar";
-
-const ResponsiveMenu = ({ showMenu, setShowMenu }) => {
-  console.log("showMenu", showMenu);
-
+const ResponsiveMenu = ({ showMenu, setShowMenu, navLinks }) => {
   const hideMenu = () => {
-    setShowMenu(() => false);
+    setShowMenu(false);
+  };
+
+  const renderLink = (item) => {
+    if (item.type === "hash") {
+      return (
+        <a 
+          href={item.link}
+          className="block py-3 text-lg font-medium text-gray-800 hover:text-blue-600 transition-colors duration-300"
+          onClick={hideMenu}
+        >
+          {item.name}
+        </a>
+      );
+    }
+    
+    return (
+      <Link 
+        to={item.link}
+        className="block py-3 text-lg font-medium text-gray-800 hover:text-blue-600 transition-colors duration-300"
+        onClick={hideMenu}
+      >
+        {item.name}
+      </Link>
+    );
+  };
+  
+  if (!navLinks) {
+    return null;
   }
   
   return (
-    <div
-      className={`${
-        showMenu ? "left-0" : "-left-[100%]"
-      } fixed bottom-0 top-0 z-20 flex h-screen w-[75%] flex-col justify-between bg-white dark:bg-gray-900 dark:text-white px-8 pb-6 pt-16 text-black transition-all duration-200 md:hidden rounded-r-xl shadow-md`}
-    >
-      <div className="card">
-        <div className="flex items-center justify-start gap-3">
-          <FaUserCircle size={50} />
-          <div>
-            <h1>Horizon Transports</h1>
-            <h1 className="text-sm text-slate-500">formation VTC & Taxi</h1>
+    <>
+      {/* Overlay */}
+      {showMenu && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-50 z-20"
+          onClick={hideMenu}
+        />
+      )}
+      
+      {/* Mobile Menu */}
+      <div
+        className={`fixed top-0 left-0 w-80 h-full bg-white z-30 flex flex-col p-8 shadow-2xl transition-transform duration-300 ease-in-out ${
+          showMenu ? 'translate-x-0' : '-translate-x-full'
+        }`}
+      >
+        {/* Header with close button */}
+        <div className="flex items-center justify-between mb-8">
+          <div className="flex items-center gap-3">
+            <FaUserCircle size={40} className="text-blue-600" />
+            <div>
+              <h1 className="text-lg font-semibold text-gray-800">Horizon Transports</h1>
+              <p className="text-sm text-gray-500">Formation VTC & Taxi</p>
+            </div>
           </div>
+          <button
+            onClick={hideMenu}
+            className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+            aria-label="Fermer le menu"
+          >
+            <FaTimes size={20} className="text-gray-600" />
+          </button>
         </div>
-        <nav className="mt-12">
-          <ul className="space-y-4 text-xl">
-            {Navlinks.map((data) => (
-              <li >
-                <a href={data.link} className="mb-5 inline-block">
-                  {data.name}
-                </a>
+
+        {/* Navigation */}
+        <nav className="flex-1">
+          <ul className="space-y-2">
+            {navLinks.map((item) => (
+              <li key={item.id}>
+                {renderLink(item)}
               </li>
             ))}
-            <p className="text-sm" onClick={hideMenu} >Fermez le menu </p>
           </ul>
         </nav>
+
+        {/* Footer */}
+        <div className="text-center pt-4 border-t border-gray-200">
+          <button 
+            onClick={hideMenu}
+            className="text-sm text-gray-500 hover:text-blue-600 transition-colors"
+          >
+            Fermer le menu
+          </button>
+        </div>
       </div>
-     {/* <div className="footer">
-        <h1>
-          Made with ❤ by <a href="https://dilshad-ahmed.github.io/">Dilshad</a>{" "}
-        </h1>
-      </div>*/}
-    </div>
+    </>
   );
 };
 

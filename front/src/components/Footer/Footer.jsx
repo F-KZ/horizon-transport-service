@@ -33,8 +33,8 @@ const FooterLinks = [
 const Footer = () => {
   return (
     <div className="bg-gray-100 dark:bg-dark mt-14 rounded-t-3xl">
-      <section className="container">
-        <div className=" flex flex-row sm:justify-between justify-center flex-wrap py-5">
+      <section className="container px-0">
+        <div className=" flex flex-row items-center flex-wrap py-5">
           {/* company Details */}
           <div className=" py-8 px-4 "> <img
             width={260}
@@ -89,14 +89,6 @@ const Footer = () => {
               <a href="tel:+33 9 81 03 60 52" className="text-sm hover:text-blue-500 transition-colors">+33 9 81 03 60 52</a>
             </div>
             <div className="flex mt-4">
-              <img
-                src={qualio}
-                alt="Logo Qualiopi"
-                width={200}
-                height={200}
-                className='cursor-pointer'
-              />
-              
              
               <div className="flex flex-col gap-3">
               <button // Separate button for PDF_VTC
@@ -126,7 +118,27 @@ const Footer = () => {
                 className='cursor-pointer'
               />
               </div>*/}
+
+               {/* logo organisme */}
+              <div className="flex flex-col gap-2 items-end">
+            <img
+                src={cpf}
+                alt="Logo CPF"
+                width={100}
+                height={100}
+                className='cursor-pointer'
+              />
+
+<img
+                src={qualio}
+                alt="Logo Qualiopi"
+                width={200}
+                height={200}
+                className='cursor-pointer'
+              />
+            </div>
         </div>
+        
       </section>
     </div>
   );

@@ -9,28 +9,34 @@ import borcel from "../../assets/logo2.webp"
 
 export const Navlinks = [
   {
-    id: 2,
+    id: 1,
     name: "Pourquoi nous ?",
     link: "#Services",
+    type: "hash"
   },
   {
-    id: 1,
+    id: 2,
     name: "Pré-Requis",
     link: "#Requis",
+    type: "hash"
   },
   {
-    id: 3,
+    id: 3, 
     name: "Contactez-nous",
     link: "#Info",
+    type: "hash"
   },
   {
-  
+    id: 4,
     name: "E.Learning",
     link: "/adokent",
+    type: "route"
   },
   {
+    id: 5,
     name: "Formules",
     link: "/formules",
+    type: "route"
   },
 ];
 
@@ -38,86 +44,83 @@ const Navbar = ({ theme, setTheme }) => {
   const [showMenu, setShowMenu] = useState(false);
 
   const toggleMenu = () => {
-    setShowMenu(!showMenu);
+    setShowMenu(prevShowMenu => !prevShowMenu);
   };
+
+  const renderLink = (item) => {
+    if (item.type === "hash") {
+      return (
+        <a 
+          href={item.link}
+          className="text-lg font-medium hover:text-primary py-2 hover:border-b-2 hover:border-primary transition-colors duration-500"
+          onClick={() => setShowMenu(false)}
+        >
+          {item.name}
+        </a>
+      );
+    }
+    
+    return (
+      <Link 
+        to={item.link}
+        className="text-lg font-medium hover:text-primary py-2 hover:border-b-2 hover:border-primary transition-colors duration-500"
+        onClick={() => setShowMenu(false)}
+      >
+        {item.name}
+      </Link>
+    );
+  };
+
   return (
-    <div
-      className="relative z-10 shadow-md w-full dark:bg-black dark:text-white duration-300
-    "
-    >
+    <header className="relative z-10 shadow-md w-full dark:bg-black dark:text-white duration-300">
       <div className="container py-2 md:py-0">
         <div className="flex justify-between items-center">
-          <div>
-            <img
-              src={borcel}
-              alt="logo"
-              className="w-1/2 md:w-[70%] lg:w-full "
-            />
+          {/* Logo */}
+          <div className="flex-shrink-0">
+            <Link to="/">
+              <img
+                src={borcel}
+                alt="logo"
+                className="w-1/2 md:w-[70%] lg:w-full max-h-16 object-contain"
+              />
+            </Link>
           </div>
-          <div>
-          </div>
+
+          {/* Desktop Navigation */}
           <nav className="hidden md:block">
             <ul className="flex items-center gap-8">
-              {Navlinks.map(({ id, name, link }) => (
-                <li key={id} className="py-4">
-                 <Link 
-              to={link} 
-              className="text-lg font-medium hover:text-primary py-2 hover:border-b-2 hover:border-primary transition-colors duration-500"
-            >
-              {name}
-            </Link>
+              {Navlinks.map((item) => (
+                <li key={item.id} className="py-4">
+                  {renderLink(item)}
                 </li>
               ))}
-              
-              {/* DarkMode feature implement 
-              {theme === "dark" ? (
-                <BiSolidSun
-                  onClick={() => setTheme("light")}
-                  className="text-2xl"
-                />
-              ) : (
-                <BiSolidMoon
-                  onClick={() => setTheme("dark")}
-                  className="text-2xl"
-                />
-              )}
-              */}
             </ul>
           </nav>
-          {/* Mobile view  */}
-          <div className="flex items-center gap-4 md:hidden ">
-            {/* dark  mode 
-            {theme === "dark" ? (
-              <BiSolidSun
-                onClick={() => setTheme("light")}
-                className="text-2xl"
-              />
-            ) : (
-              <BiSolidMoon
-                onClick={() => setTheme("dark")}
-                className="text-2xl"
-              />
-            )}
-            */}
-            {/* Mobile Hamburger icon */}
-            {showMenu ? (
-              <HiMenuAlt1
-                onClick={toggleMenu}
-                className=" cursor-pointer transition-all"
-                size={30}
-              />
-            ) : (
-              <HiMenuAlt3
-                onClick={toggleMenu}
-                className="cursor-pointer transition-all"
-                size={30}
-              />
-            )}
+
+          {/* Mobile Menu Button */}
+          <div className="flex items-center gap-4 md:hidden relative z-40">
+            <button
+              onClick={toggleMenu}
+              className="p-2 rounded-md border border-gray-300 bg-white hover:bg-gray-50 transition-all duration-200 flex items-center justify-center"
+              aria-label="Toggle menu"
+            >
+              {showMenu ? (
+                <HiMenuAlt1 size={30} className="text-gray-800" />
+              ) : (
+                <HiMenuAlt3 size={30} className="text-gray-800" />
+              )}
+            </button>
           </div>
         </div>
       </div>
-      <ResponsiveMenu showMenu={showMenu} setShowMenu={setShowMenu} />
-    </div>
+
+      {/* Mobile Menu */}
+      <ResponsiveMenu 
+        showMenu={showMenu} 
+        setShowMenu={setShowMenu} 
+        navLinks={Navlinks}
+      />
+    </header>
   );
 };
 

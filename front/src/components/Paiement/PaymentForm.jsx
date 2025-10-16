@@ -3,7 +3,6 @@ import { useStripe, useElements, CardElement } from '@stripe/react-stripe-js';
 import { FaCreditCard, FaPaypal, FaUser } from 'react-icons/fa';
 import { BACK_API,LOCAL_BACK } from '../utils/constant';
 import card from '../../assets/pngegg.png';
-import republique from '../../assets/republique.jpg';
 import cpf from '../../assets/logo-cpf.png';
 import { Link } from 'react-router-dom';
 
@@ -123,7 +122,7 @@ const PaymentForm = ({ type, formation, price, title, url }) => {
       <div className="space-y-4">
         <h3 className="text-lg font-semibold text-white mb-4">Choisissez votre méthode de paiement</h3>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 gap-4">
           {/* Bouton Stripe */}
           <button
             onClick={() => setPaymentMethod('stripe')}
@@ -135,7 +134,7 @@ const PaymentForm = ({ type, formation, price, title, url }) => {
           >
             <div className="flex items-center gap-3">
               <FaCreditCard className="text-2xl text-[#FFC727]" />
-              <div className="text-left">
+              <div className="text-center  w-full">
                 <p className="font-semibold text-white">Carte bancaire</p>
                 <p className="text-sm text-gray-400">Visa, Mastercard, etc.</p>
               </div>
@@ -153,7 +152,7 @@ const PaymentForm = ({ type, formation, price, title, url }) => {
           >
             <div className="flex items-center gap-3">
               <FaPaypal className="text-2xl text-[#0070BA]" />
-              <div className="text-left">
+              <div className="text-center  w-full">
                 <p className="font-semibold text-white">Paypal</p>
                 <p className="text-sm text-gray-400">Compte Paypal</p>
               </div>
@@ -170,9 +169,9 @@ const PaymentForm = ({ type, formation, price, title, url }) => {
             }`}
           >
             <div className="flex items-center gap-3">
-              <img src={republique} className="w-7" />
-              <div className="text-left">
-                <p className="font-semibold text-white">Compte CPF</p>
+              <img src={cpf} className="w-7" />
+              <div className="text-center w-full">
+                <p className="font-semibold text-white">Mon compte CPF</p>
                 <p className="text-sm text-gray-400">Formation éligible au CPF</p>
               </div>
             </div>
@@ -211,7 +210,7 @@ const PaymentForm = ({ type, formation, price, title, url }) => {
   >
     {/* Vous pouvez ajouter une icône CPF si vous en avez une */}
     <FaUser /> {/* Exemple d'icône */}
-    {loading ? 'Traitement...' : 'Payer avec le compte CPF'}
+    {loading ? 'Traitement...' : 'Faire le devis avec mon compte CPF'}
   </button>
 )}
           
