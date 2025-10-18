@@ -74,20 +74,20 @@ const Navbar = ({ theme, setTheme }) => {
   return (
     <header className="relative z-10 shadow-md w-full dark:bg-black dark:text-white duration-300">
       <div className="container py-2 md:py-0">
-        <div className="flex justify-between items-center">
+        <div className="flex flex-col lg:flex-row justify-between items-center mt-8">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link to="/">
+            <Link to="/" className="flex justify-center lg:block">
               <img
                 src={borcel}
                 alt="logo"
-                className="w-1/2 md:w-[70%] lg:w-full max-h-16 object-contain"
+                className="w-1/2 max-h-52 lg:w-full lg:max-h-16 object-contain"
               />
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:block">
+          <nav className=" hidden lg:block ">
             <ul className="flex items-center gap-8">
               {Navlinks.map((item) => (
                 <li key={item.id} className="py-4">
@@ -98,7 +98,9 @@ const Navbar = ({ theme, setTheme }) => {
           </nav>
 
           {/* Mobile Menu Button */}
-          <div className="flex items-center gap-4 md:hidden relative z-40">
+          <div className="flex items-center gap-4 lg:hidden relative z-40"
+          
+          >
             <button
               onClick={toggleMenu}
               className="p-2 rounded-md border border-gray-300 bg-white hover:bg-gray-50 transition-all duration-200 flex items-center justify-center"

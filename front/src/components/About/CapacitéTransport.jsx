@@ -22,10 +22,10 @@ const CapacitéTransportText = ({ switchSide}) => {
               >
                 En quoi consiste la capacité de transport léger ?
               </h1>
-              <p data-aos="fade-up" className="text-justify leading-8 tracking-wide">
+              <p data-aos="fade-up" className="text-justify text-2xl lg:text-lg leading-8 tracking-wide">
               L&apos;attestation de capacité professionnelle en transport routier de marchandises au moyen de véhicules n&apos;excédant pas un poids maximal autorisé de 3,5 tonnes permet à son titulaire de diriger en tant que "gestionnaire de transport" les activités de transport d&apos;une entreprise de transport "léger" de marchandises inscrite au registre électronique national des entreprises de transport par route.
               </p>
-              <p data-aos="fade-up">
+              <p data-aos="fade-up" className='text-2xl lg:text-lg'>
                 N&apos;attendez plus, rejoignez-nous sans plus attendre !
               </p>
               <Link to="/formules">
@@ -46,15 +46,15 @@ const CapacitéTransport = () => {
     };
   
     return (
-      <div className="dark:bg-dark bg-slate-100 sm:min-h-[600px] sm:grid sm:place-items-center duration-300">
+      <div className="dark:bg-dark bg-slate-100 sm:min-h-[400px] sm:grid sm:place-items-center duration-300">
         <div className="container pt-16 pb-8 px-0">
           <div className="grid xl:grid-cols-2 place-items-center gap-10 lg:gap-16">
             <div data-aos="slide-right" data-aos-duration="1500">
-              <img
-                src={Carwebp}
-                alt=" photo de voiture"
-                className="sm:scale-125 sm:-translate-x-11 max-h-[300px] drop-shadow-[2px_10px_6px_rgba(0,0,0,0.50)]"
-              />
+            <img
+  src={Carwebp}
+  alt="photo de voiture"
+  className="sm:scale-110 sm:-translate-x-6 max-h-[300px] max-w-[90%] drop-shadow-[2px_10px_6px_rgba(0,0,0,0.50)]"
+/>
             </div>
             <div>
               {count ? <CapacitéTransportText switchSide={switchSide} /> : <Formation/>}

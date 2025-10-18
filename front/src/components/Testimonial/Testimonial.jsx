@@ -2,7 +2,7 @@ import React from "react";
 
 const Theory = () => {
   return (
-    <ul className="space-y-3">
+    <ul className="space-y-3 text-2xl lg:text-lg">
     <li>Réglementation des transports publics (T3P)</li>
     <li>Réglementation nationale spécifique des VTC</li>
     <li>Réglementation nationale spécifique des Taxis</li>
@@ -17,7 +17,7 @@ const Theory = () => {
 
 const Pratique = () => {
   return (
-    <ul className="space-y-3">
+    <ul className="space-y-3 text-2xl lg:text-lg">
      <li>Pour tous, préparation capacité commercial et touristique. </li>
     <li>Pour le VTC, devis et facture.</li>
     <li>Pour le Taxi, utilisation de tous les équipements spéciaux.</li>
@@ -30,7 +30,7 @@ const Pratique = () => {
 
 const Accompagnement = () => {
   return (
-    <p className="space-y-3">
+    <p className="space-y-3 text-2xl lg:text-lg">
     Pour tous, un accompagnement individualisé et personnalisé; pour les VTC jusqu&apos;à l&apos;inscription sur la liste nationale, <br/> 
     pour les Taxis jusqu&apos;à l&apos;obstention de la carte professionnelle.
     
@@ -75,12 +75,12 @@ const Testimonial = () => {
             >
               Programmes de nos Formations
             </p>
-            <p data-aos="fade-up" className="text-center sm:px-44">
+            <p data-aos="fade-up" className="text-center sm:px-44 text-2xl lg:text-lg">
               Nos programmes ont été élaborés pour que vous ayez entre les mains tous les éléments nécessaires pour garantir votre réussite.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 items-end sm:grid-cols-2 md:grid-cols-3 gap-4 text-black dark:text-white">
+          <div className="grid grid-cols-1 items-end  lg:grid-cols-3 gap-4 text-black dark:text-white">
             {testimonialData.map((skill) => (
               <div
                 key={skill.name}

@@ -25,7 +25,7 @@ const Form = () => {
           <p className="text-gray-400">Nous sommes à votre écoute pour répondre à toutes vos questions</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {/* Formulaire */}
           <div className="bg-gray-800 p-8 rounded-lg shadow-lg">
             <MyForm />
@@ -33,7 +33,7 @@ const Form = () => {
 
           {/* Informations de contact */}
           <div className="bg-gray-800 p-8 rounded-lg shadow-lg">
-            <div className="space-y-6">
+            <div className="flex flex-col gap-8 flex-wrap justify-around md:justify-start">
               <div className="flex items-center space-x-4">
                 <div className="bg-blue-600 p-3 rounded-full">
                   <FaPhoneAlt className="text-white text-xl" />

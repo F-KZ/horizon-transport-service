@@ -33,17 +33,37 @@ const FooterLinks = [
 const Footer = () => {
   return (
     <div className="bg-gray-100 dark:bg-dark mt-14 rounded-t-3xl">
-      <section className="container px-0">
+      <section className=" px-8">
         <div className=" flex flex-row items-center flex-wrap py-5">
+          <div className="flex justify-between w-full">
           {/* company Details */}
-          <div className=" py-8 px-4 "> <img
+           <img
             width={260}
             src={borcel}
             alt="logo horizon"
-          /></div>
+            className="object-cover"
+          />
+          <img
+                src={cpf}
+                alt="Logo CPF"
+                width={200}
+                height={200}
+                className='object-cover'
+              />
+
+<img
+                src={qualio}
+                alt="Logo Qualiopi"
+                width={350}
+                height={200}
+                className='object-cover'
+              />
+ 
+          </div>
           
           {/* Links */}
-          <div className=" py-8 px-4 ">
+          <div className="flex flex-row-reverse items-center w-full justify-between">
+          <div>
             <h1 className="sm:text-3xl text-xl font-bold sm:text-left text-justify mb-3 flex items-center gap-3 font-serif">
               Informations Légales
             </h1>
@@ -105,6 +125,7 @@ const Footer = () => {
             </div>
            
           </div>
+          </div>
           {/* <div className="footer">
         <h1>
           Made with ❤ by <a href="https://dilshad-ahmed.github.io/">Dilshad</a>{" "}
@@ -120,23 +141,7 @@ const Footer = () => {
               </div>*/}
 
                {/* logo organisme */}
-              <div className="flex flex-col gap-2 items-end">
-            <img
-                src={cpf}
-                alt="Logo CPF"
-                width={100}
-                height={100}
-                className='cursor-pointer'
-              />
-
-<img
-                src={qualio}
-                alt="Logo Qualiopi"
-                width={200}
-                height={200}
-                className='cursor-pointer'
-              />
-            </div>
+            
         </div>
         
       </section>

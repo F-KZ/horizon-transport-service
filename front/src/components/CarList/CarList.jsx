@@ -36,13 +36,13 @@ const CarList = () => {
         >
           Chauffeur professionnel oui mais à quelles conditions ?
         </h1>
-        <p data-aos="fade-up" aos-delay="400" className=" text-2xl  pb-10 flex flex-row items-center gap-2">
+        <p data-aos="fade-up" aos-delay="400" className=" text-2xl  pb-10 flex flex-row items-center justify-center lg:justify-between gap-2">
          
  <span className="font-semibold">Prérequis</span>: <FaAngleDoubleDown />
         </p>
         {/* Car listing */}
         <div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
             {carList.map((data) => (
               <div
                 data-aos="fade-up"
@@ -59,7 +59,7 @@ const CarList = () => {
                 <div className="space-y-2">
                   <h1 className="text-primary font-semibold text-center">{data.name}</h1>
                   <div className="flex justify-between items-center text-xl font-semibold">
-                    <p className="text-center">{data.price}</p>
+                    <p className="text-center w-full">{data.price}</p>
                   </div>
                 </div>
               </div>

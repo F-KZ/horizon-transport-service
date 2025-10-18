@@ -22,10 +22,10 @@ const TaxiText = ({ switchSide}) => {
               >
                 En quoi consiste le métier de chauffeur professionnel Taxi ?
               </h1>
-              <p data-aos="fade-up" className="text-justify leading-8 tracking-wide">
+              <p data-aos="fade-up" className="text-justify text-2xl lg:text-lg leading-8 tracking-wide">
               Pour devenir chauffeur de taxi, il faut réussir un examen théorique et pratique organisé par les chambres de métiers. Cet examen vérifie l&apos;aptitude à transporter des passagers en toute sécurité, à respecter les règles professionnelles et à expliquer clairement la facturation. Les critères d&apos;évaluation sont définis par l&apos;arrêté du 6 avril 2017. L&apos;objectif est de garantir des services professionnels et de qualité.
               </p>
-              <p data-aos="fade-up">
+              <p data-aos="fade-up" className='text-2xl lg:text-lg'>
                 N&apos;attendez plus, rejoignez-nous sans plus attendre !
               </p>
               <Link to="/formules">
@@ -46,15 +46,15 @@ const Taxi = () => {
     };
   
     return (
-      <div className="dark:bg-dark bg-slate-100 sm:min-h-[600px] sm:grid sm:place-items-center duration-300">
+      <div className="dark:bg-dark bg-slate-100 sm:min-h-[400px] sm:grid sm:place-items-center duration-300">
         <div className="container pt-16 pb-8 px-0">
           <div className="grid xl:grid-cols-2 place-items-center gap-10 lg:gap-16">
             <div data-aos="slide-right" data-aos-duration="1500">
-              <img
-                src={Carwebp}
-                alt=" photo de voiture"
-                className="sm:scale-125 sm:-translate-x-11 max-h-[300px] drop-shadow-[2px_10px_6px_rgba(0,0,0,0.50)]"
-              />
+            <img
+  src={Carwebp}
+  alt="photo de voiture"
+  className="sm:scale-110 sm:-translate-x-6 max-h-[300px] max-w-[90%] drop-shadow-[2px_10px_6px_rgba(0,0,0,0.50)]"
+/>
             </div>
             <div>
               {count ? <TaxiText switchSide={switchSide} /> : <Formation/>}
