@@ -34,8 +34,8 @@ const Footer = () => {
   return (
     <div className="bg-gray-100 dark:bg-dark mt-14 rounded-t-3xl">
       <section className=" px-8">
-        <div className=" flex flex-row items-center flex-wrap py-5">
-          <div className="flex justify-between w-full">
+        <div className=" flex flex-row items-center flex-wrap py-5 justify-around">
+          <div className="flex flex-col xl:flex-row xl:w-full justify-between gap-8 ">
           {/* company Details */}
            <img
             width={260}
@@ -46,23 +46,23 @@ const Footer = () => {
           <img
                 src={cpf}
                 alt="Logo CPF"
-                width={200}
-                height={200}
+                width={250}
+                
                 className='object-cover'
               />
 
 <img
                 src={qualio}
                 alt="Logo Qualiopi"
-                width={350}
-                height={200}
+                width={480}
+                
                 className='object-cover'
               />
  
           </div>
           
           {/* Links */}
-          <div className="flex flex-row-reverse items-center w-full justify-between">
+          <div className="flex flex-col-reverse xl:flex-row-reverse xl:w-full items-center gap-8  justify-between">
           <div>
             <h1 className="sm:text-3xl text-xl font-bold sm:text-left text-justify mb-3 flex items-center gap-3 font-serif">
               Informations Légales
