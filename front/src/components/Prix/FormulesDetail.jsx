@@ -16,7 +16,7 @@ const FormulesDetail = () => {
     const priceWithVAT = calculatePriceWithVAT(parseInt(price));
     
     return (
-      <div className=" flex flex-col justify-between bg-gray-800 p-6 rounded-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#FFC727]/20">
+      <div className=" flex flex-col bg-gray-800 p-6 justify-between rounded-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#FFC727]/20">
         <div className="flex items-center gap-4 mb-4">
           <Icon className="text-3xl text-[#FFC727]" />
           <div className="flex-1">
@@ -28,13 +28,17 @@ const FormulesDetail = () => {
             img ? <img className="w-14" src={img} alt='logo CPF'/> : null
           }
         </div>
-        <p className="text-gray-300 mb-4">{description}</p>
+        <div className='flex flex-row justify-between lg:flex-col '>
+        <p className="text-gray-300 mb-4 w-1/2 text-justify  lg:w-full ">{description}</p>
+        <span>
         <Link 
           to={`/paiement?type=${type}&formation=${formation}&price=${priceWithVAT}&title=${title}${url ? `&url=${encodeURIComponent(url)}` : ''}`} 
-          className="block w-full bg-[#FFC727] text-black font-semibold py-3 px-4 rounded-lg text-center hover:bg-[#FFC727]/90 transition-colors mt-4 transform hover:scale-105"
+          className="block lg:w-full bg-[#FFC727] text-black font-semibold py-3 px-4 rounded-lg text-center hover:bg-[#FFC727]/90 transition-colors mt-4 transform hover:scale-105"
         >
           S'inscrire
         </Link>
+        </span>
+        </div>
       </div>
     );
   };
@@ -56,7 +60,7 @@ const FormulesDetail = () => {
               <FaCar className="text-3xl text-[#FFC727]" />
               <h2 className="text-3xl font-semibold text-[#FFC727]">Formation VTC</h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               <FormulaCard
                 title="Formule Pratique examen VTC 3h"
                 description="Formule examen pratique, véhicule double commande inclus avec confiseries, bouteilles d'eau, magazines et journaux."
