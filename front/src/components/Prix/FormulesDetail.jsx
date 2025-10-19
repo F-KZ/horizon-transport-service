@@ -25,7 +25,7 @@ const FormulesDetail = () => {
             <p className="text-xs text-gray-500">Prix HT: {price}€ | TVA 20% incluse</p>
           </div>
           {
-            img ? <img className="w-14" src={img} alt='logo CPF'/> : null
+            img ? <img className="w-20" src={img} alt='logo CPF'/> : null
           }
         </div>
         <div className='flex flex-row justify-between lg:flex-col '>
