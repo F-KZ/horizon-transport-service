@@ -106,7 +106,7 @@ const Footer = () => {
               <FaMobileAlt />
               <a href="tel:+33 7 69 98 98 85" className="text-sm hover:text-blue-500 transition-colors">+33 7 69 98 98 85</a>
               <br/>
-              <a href="tel:+33 9 81 03 60 52" className="text-sm hover:text-blue-500 transition-colors">+33 9 81 03 60 52</a>
+              <a href="tel:+33 1 83 53 96 31" className="text-sm hover:text-blue-500 transition-colors">+33 1 83 53 96 31</a>
             </div>
             <div className="flex mt-4">
              
