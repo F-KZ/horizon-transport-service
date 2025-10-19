@@ -20,8 +20,8 @@ const FormulesDetail = () => {
         <div className="flex items-center gap-4 mb-4">
           <Icon className="text-3xl text-[#FFC727]" />
           <div className="flex-1">
-            <h3 className="text-xl font-semibold text-white">{title}</h3>
-            <p className="text-sm text-gray-400 mt-1">À partir de {formatPriceWithVAT(price)}</p>
+            <h3 className="text-2xl lg:text-xl font-semibold text-white">{title}</h3>
+            <p className="text-2xl lg:text-xl text-gray-400 mt-1">À partir de {formatPriceWithVAT(price)}</p>
             <p className="text-xs text-gray-500">Prix HT: {price}€ | TVA 20% incluse</p>
           </div>
           {
@@ -29,7 +29,7 @@ const FormulesDetail = () => {
           }
         </div>
         <div className='flex flex-row justify-between lg:flex-col '>
-        <p className="text-gray-300 mb-4 w-1/2 text-justify  lg:w-full ">{description}</p>
+        <p className="text-gray-300 text-2xl lg:text-xl mb-4 w-1/2 text-left lg:w-full ">{description}</p>
         <span>
         <Link 
           to={`/paiement?type=${type}&formation=${formation}&price=${priceWithVAT}&title=${title}${url ? `&url=${encodeURIComponent(url)}` : ''}`} 
@@ -122,7 +122,7 @@ const FormulesDetail = () => {
               <FaTaxi className="text-3xl text-[#FFC727]" />
               <h2 className="text-3xl font-semibold text-[#FFC727]">Formation Taxi</h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               <FormulaCard
                 title="Formule Pratique examen Taxi 3h"
                 description="Formule examen pratique, véhicule double commande inclus avec confiseries, bouteilles d'eau, magazines et journaux. "
@@ -194,7 +194,7 @@ const FormulesDetail = () => {
               <FaTruck className="text-3xl text-[#FFC727]" />
               <h2 className="text-3xl font-semibold text-[#FFC727]">Capacité de Transport</h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               <FormulaCard
                 title="Formation capacité léger de transport moins de 9 places"
                 description="Formation pour le transport de personnes avec des véhicules de moins de 9 places"
@@ -220,7 +220,7 @@ const FormulesDetail = () => {
               <FaCarSide className="text-3xl text-[#FFC727]" />
               <h2 className="text-3xl font-semibold text-[#FFC727]">Location de Voiture</h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               <FormulaCard
                 title="Location de vehicule homologué"
                 description="Location de véhicule homologué aux normes de l'examen avec assurance et assistance le jour de l'examen"
