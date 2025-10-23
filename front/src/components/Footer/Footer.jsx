@@ -5,7 +5,7 @@ import {
 } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import borcel from "../../assets/logo.webp";
-import qualio from "../../assets/qualio2.webp";
+import qualio from "../../assets/qualio-action.webp";
 import cpf from "../../assets/logo-cpf.png"
 import Programme from "../programme/Programme";
 import Taxi from "../programme/Taxi";
