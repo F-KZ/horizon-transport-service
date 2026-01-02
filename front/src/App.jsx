@@ -29,6 +29,7 @@ import CapacitéNeufPersonnes from "./components/About/CapacitéNeufPersonnes";
 import Taxi from "./components/About/Taxi";
 import Slider from './components/Slider/Slider';
 import PaymentCancel from "./components/Paiement/PaymentCancel";
+import GoogleReviews from "./components/Google/GoogleReviews";
 // import Experience from "./components/Experience/Experience";
 
 const App = () => {
@@ -71,6 +72,7 @@ const App = () => {
               <CarList />
               <Testimonial />
               <Formules />
+              <GoogleReviews/>
               <Form />
               <ScrollToTop />
             </>
