@@ -226,7 +226,7 @@ const FormulesDetail = () => {
                 description="Location de véhicule homologué aux normes de l'examen avec assurance et assistance le jour de l'examen"
                 price="99"
                 type="location"
-                formation="homologue"
+                formation="Mise à disposition véhicule, sans formation pratique examen"
                 icon={FaCarSide}
               />
             </div>
