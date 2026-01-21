@@ -12,7 +12,7 @@ const FormulesDetail = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const FormulaCard = ({ title, description, price, type, formation, icon: Icon, img, url }) => {
+   const FormulaCard = ({ title, description, price, type, formation, icon: Icon, img, url }) => {
     const priceWithVAT = calculatePriceWithVAT(parseInt(price));
     
     return (
@@ -177,7 +177,7 @@ const FormulesDetail = () => {
                 icon={FaTaxi}
               />
 
-<FormulaCard
+              <FormulaCard
                 title="Formation initiale TAXI formule compléte coup de pouce"
                 description="Formule complète pour budget sans financement examen théorique et pratique, véhicule double commande inclus avec confiseries, bouteilles d'eau, magazines et journaux."
                 price="1999"
