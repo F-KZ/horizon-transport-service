@@ -5,6 +5,7 @@ import { BACK_API,LOCAL_BACK } from '../utils/constant';
 import card from '../../assets/pngegg.png';
 import cpf from '../../assets/logo-cpf.png';
 import { Link } from 'react-router-dom';
+import FormulesDetail from '../Prix/FormulesDetail';
 
 
 const PaymentForm = ({ type, formation, price, title, url }) => {
@@ -219,7 +220,7 @@ const PaymentForm = ({ type, formation, price, title, url }) => {
         <p>Paiement sécurisé</p>
         <div className="flex justify-center gap-2 mt-2">
           <img src={card} alt="Visa" className="h-[4rem] w-[4rem]" />
-          <img src={cpf} alt="logo CPF" className="h-[4rem] w-[4rem]" />
+         {/* <img src={cpf} alt="logo CPF" className="h-[4rem] w-[4rem]" /> */} 
           <div className="flex items-center">
             <FaPaypal className="text-[#0070BA] text-4xl" />
           </div>

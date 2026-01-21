@@ -108,7 +108,7 @@ const FormulesDetail = () => {
               <FormulaCard
                 title="Formation initiale VTC formule compléte coup de pouce"
                 description="Formule complète pour budget sans financement examen théorique et pratique, véhicule double commande inclus avec confiseries, bouteilles d'eau, magazines et journaux."
-                price="1600"
+                price="1999"
                 type="vtc"
                 formation="passerelle"
                 icon={FaCar}
@@ -180,7 +180,7 @@ const FormulesDetail = () => {
 <FormulaCard
                 title="Formation initiale TAXI formule compléte coup de pouce"
                 description="Formule complète pour budget sans financement examen théorique et pratique, véhicule double commande inclus avec confiseries, bouteilles d'eau, magazines et journaux."
-                price="1600"
+                price="1999"
                 type="vtc"
                 formation="passerelle"
                 icon={FaCar}
