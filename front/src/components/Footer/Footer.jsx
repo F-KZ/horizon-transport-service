@@ -9,6 +9,7 @@ import qualio from "../../assets/qualio-action.webp";
 import cpf from "../../assets/logo-cpf.png"
 import Programme from "../programme/Programme";
 import Taxi from "../programme/Taxi";
+import Certificat from "../programme/Certificat";
 
 
 
@@ -58,6 +59,7 @@ const Footer = () => {
                 
                 className='object-cover'
               />
+
  
           </div>
           
@@ -88,6 +90,8 @@ const Footer = () => {
             <Programme/>
             <br/>
             <Taxi/>
+            <br/>
+            <Certificat/>
           </div>
           {/* Social Handle */}
           <div className=" py-8 px-4 flex flex-col items-center sm:items-start">

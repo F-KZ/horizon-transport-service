@@ -28,7 +28,7 @@ export const downloadFiles = (url) => {
   link.click()
 }
 
-export const PDF_VTC = "https://horizontransports.fr/Programme.pdf";
-export const PDF_Taxi = "https://horizontransports.fr/Taxi.pdf";
-export const PDF_FicheContact = "https://horizontransports.fr/FicheContact.pdf";
-
+export const PDF_VTC = "/Programme.pdf";
+export const PDF_Taxi = "/Taxi.pdf";
+export const PDF_FicheContact = "/FicheContact.pdf";
+export const PDF_CERTIFICAT = "/Certificat.pdf";
