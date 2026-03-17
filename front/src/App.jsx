@@ -30,6 +30,8 @@ import Taxi from "./components/About/Taxi";
 import Slider from './components/Slider/Slider';
 import PaymentCancel from "./components/Paiement/PaymentCancel";
 import GoogleReviews from "./components/Google/GoogleReviews";
+import ElearningPage from "./components/ELearning/ElearningPage";
+import PresentationPage from "./components/ELearning/PresentationPage";
 // import Experience from "./components/Experience/Experience";
 
 const App = () => {
@@ -86,6 +88,8 @@ const App = () => {
           <Route path="/paypal/success" element={<PayPalSuccess />} />
           <Route path="/adokent" element={<ADokent />} />
           <Route path="/formules" element={<FormulesDetail />} />
+          <Route path="/e-learning" element={<ElearningPage />} />
+          <Route path="/e-learning/:id" element={<PresentationPage/>}/>
         </Routes>
         <Footer />
       </div>

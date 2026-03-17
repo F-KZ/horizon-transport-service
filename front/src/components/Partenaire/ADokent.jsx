@@ -101,7 +101,7 @@ const ADokent = () => {
           <div className="flex md:flex-row md:justify-center flex-col space-x-4">
           <div className="text-center">
             <Link
-              to="/payment"
+              to="/e-learning"
               className="inline-block bg-[#1E3A8A] hover:bg-[#1E40AF] text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-all duration-200 transform hover:scale-105"
             >
               je choisis ma formation
