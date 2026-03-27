@@ -28,7 +28,7 @@ export const downloadFiles = (url) => {
   link.click()
 }
 
-export const PDF_VTC = "/Programme.pdf";
-export const PDF_Taxi = "/Taxi.pdf";
+export const PDF_VTC = "/ProVTC.pdf";
+export const PDF_Taxi = "/proTaxi.pdf";
 export const PDF_FicheContact = "/FicheContact.pdf";
 export const PDF_CERTIFICAT = "/Certificat.pdf";
